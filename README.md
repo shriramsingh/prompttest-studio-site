@@ -11,9 +11,8 @@ Public product website and distribution hub for PromptTest Studio.
 - FAQ: `faq.html`
 - Contact: `contact.html`
 
-The application source is kept in the private
-[`prompttest-studio`](https://github.com/shriramsingh/prompttest-studio) repository.
-This repository contains only public marketing content and release links.
+The application source and its engineering documentation are maintained in a private
+repository. This repository contains only public marketing content and release links.
 
 ## GitHub Pages
 
