@@ -31,6 +31,13 @@ The studio will be live on `http://localhost:5173`, automatically proxying reque
 
 ---
 
+## 📥 Download & Changelog
+
+- **Latest installer (Windows `.exe`):** [prompttest-studio-site → releases/latest](https://github.com/shriramsingh/prompttest-studio-site/releases/latest)
+- **What changed in each version:** [release changelog](https://shriramsingh.github.io/prompttest-studio-site/changelog.html)
+
+---
+
 ## 📚 Documentation
 
 - [Architecture & Technical Design](docs/ARCHITECTURE.md): System architecture, Tauri v2/Rust host, sidecar IPC, and architectural decisions.
