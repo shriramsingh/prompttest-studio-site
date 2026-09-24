@@ -38,12 +38,12 @@ The studio will be live on `http://localhost:5173`, automatically proxying reque
 
 ---
 
-## 📚 Documentation
+## 🧭 Explore PromptTest Studio
 
-- [Architecture & Technical Design](docs/ARCHITECTURE.md): System architecture, Tauri v2/Rust host, sidecar IPC, and architectural decisions.
-- [Product Specification (PRD)](docs/PRODUCT_SPEC.md): Product vision, user personas, and comprehensive feature matrix.
-- [Roadmap & Tasks](docs/ROADMAP.md): Active enhancement backlog, release infrastructure tasks, and completed milestones.
-- [Publishing & Operations Guide](docs/PUBLISHING.md): Packaging workflows, code signing, distribution, and pre-release checklist.
+- [Feature tour](https://shriramsingh.github.io/prompttest-studio-site/features.html): What the studio does, screen by screen.
+- [Getting started](https://shriramsingh.github.io/prompttest-studio-site/getting-started.html): Install it, connect a device, and run a first test.
+- [Downloads](https://shriramsingh.github.io/prompttest-studio-site/downloads.html): Latest Windows installer and every published release.
+- [Release changelog](https://shriramsingh.github.io/prompttest-studio-site/changelog.html): What changed in each version.
 
 ---
 
