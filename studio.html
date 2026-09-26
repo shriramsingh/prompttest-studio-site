@@ -62,7 +62,8 @@
               <li><a href="#spec-language">5. Plain-English Spec Language</a></li>
               <li><a href="#visual-testing">6. Visual Baselines &amp; Masks</a></li>
               <li><a href="#execution-evidence">7. Test Suites &amp; Evidence</a></li>
-              <li><a href="#troubleshooting">8. Troubleshooting &amp; Diagnostics</a></li>
+              <li><a href="#cicd-automation">8. CI/CD &amp; PromptTest CLI</a></li>
+              <li><a href="#troubleshooting">9. Troubleshooting &amp; Diagnostics</a></li>
             </ul>
           </div>
         </details>
@@ -121,6 +122,16 @@
             <ul class="docs-sidebar-links">
               <li><a href="#execution-evidence">Running Suites &amp; SSE</a></li>
               <li><a href="#test-evidence">Capturing Test Evidence</a></li>
+            </ul>
+          </div>
+
+          <div class="docs-sidebar-group">
+            <div class="docs-sidebar-title">CI/CD &amp; Automation</div>
+            <ul class="docs-sidebar-links">
+              <li><a href="#cicd-automation">PromptTest CLI (npm)</a></li>
+              <li><a href="#cli-workflows">Core CLI Workflows</a></li>
+              <li><a href="#github-actions">GitHub Actions Setup</a></li>
+              <li><a href="#junit-reports">JUnit XML &amp; Artifacts</a></li>
             </ul>
           </div>
 
@@ -598,9 +609,108 @@ Tap "Proceed to Checkout"</code></pre>
             </ul>
           </section>
 
-          <!-- Chapter 6: Troubleshooting & FAQ -->
+          <!-- Chapter 6: CI/CD Pipeline Automation (PromptTest CLI) -->
+          <section class="docs-section" id="cicd-automation">
+            <h2>6. CI/CD Pipeline Automation (PromptTest CLI)</h2>
+            <p>
+              Tests composed visually in PromptTest Studio are saved as human-readable <code>.txt</code> specification files. You can check these spec files directly into your Git repository and run them automatically on every pull request using the official <strong>PromptTest CLI</strong> published on npm.
+            </p>
+
+            <div class="docs-callout tip">
+              <div class="docs-callout-icon">📦</div>
+              <div>
+                <strong>Official npm Package:</strong> <code>prompttest</code> (version 1.5.0). Run instantly with <code>npx prompttest</code> without any global installation required.
+              </div>
+            </div>
+
+            <h3 id="cli-workflows">Core CLI Commands</h3>
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Flags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>npx prompttest doctor</code></td>
+                  <td>Diagnostic health check: verifies ADB connectivity, permissions, and connected devices.</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td><code>npx prompttest run &lt;spec&gt; [pkg]</code></td>
+                  <td>Executes plain-English test specs headlessly with automatic step retry.</td>
+                  <td><code>--heal</code>, <code>--screenshots</code>, <code>--video</code>, <code>--fresh</code></td>
+                </tr>
+                <tr>
+                  <td><code>npx prompttest explore &lt;pkg&gt;</code></td>
+                  <td>Autonomous AI app exploration: crawls screens, lists, and forms to detect crashes.</td>
+                  <td><code>--max-screens=30</code>, <code>--safety-mode=strict</code></td>
+                </tr>
+                <tr>
+                  <td><code>npx prompttest record &lt;spec&gt;</code></td>
+                  <td>Interactive touch recorder: saves physical device taps into clean spec files.</td>
+                  <td><code>--append</code></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="github-actions">Automating in GitHub Actions (.github/workflows/mobile-qa.yml)</h3>
+            <p>Here is a complete, copyable GitHub Actions workflow that launches an Android emulator and executes your Studio test specs automatically on push:</p>
+
+            <pre class="code-box"><code>name: Mobile QA Regression Suite
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: macos-13  # macOS runners support hardware acceleration for Android emulators
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Android Emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          script: |
+            # 1. Verify ADB connection
+            npx prompttest doctor
+
+            # 2. Run PromptTest Studio specs
+            npx prompttest run specs/smoke.txt com.example.myapp --heal --screenshots --embed-screenshots
+
+      - name: Upload Test Evidence & HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-evidence
+          path: output/</code></pre>
+
+            <h3 id="junit-reports">JUnit XML &amp; Test Artifacts</h3>
+            <p>Every CLI execution automatically populates an <code>output/</code> directory containing:</p>
+            <ul>
+              <li><strong><code>output/&lt;spec&gt;-junit.xml</code>:</strong> Standard JUnit report format, automatically parsed by GitHub Actions, Jenkins, and GitLab CI.</li>
+              <li><strong><code>output/&lt;spec&gt;-report.html</code>:</strong> Self-contained visual audit report with inlined Base64 failure screenshots.</li>
+              <li><strong><code>output/&lt;spec&gt;-results.json</code>:</strong> Machine-readable JSON metrics for custom dashboards.</li>
+            </ul>
+          </section>
+
+          <!-- Chapter 7: Troubleshooting & FAQ -->
           <section class="docs-section" id="troubleshooting">
-            <h2>6. Troubleshooting &amp; Common Diagnostics</h2>
+            <h2>7. Troubleshooting &amp; Common Diagnostics</h2>
 
             <h3 id="fix-unauthorized">Device Status Shows "Unauthorized"</h3>
             <p>
