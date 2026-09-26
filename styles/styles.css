@@ -904,6 +904,126 @@ a:hover {
   margin-bottom: 8px;
 }
 
+/* SmartScreen Alert Box */
+.smartscreen-notice {
+  background: rgba(30, 58, 138, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 32px 0;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.smartscreen-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.smartscreen-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.smartscreen-content h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: #93c5fd;
+}
+
+.smartscreen-content p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.smartscreen-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(10, 15, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.smartscreen-steps strong {
+  color: #60a5fa;
+}
+
+/* Guide Step List for Wi-Fi & Device Setup */
+.guide-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.guide-step-item {
+  display: flex;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.step-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent-light);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.step-details {
+  flex: 1;
+}
+
+.step-details h4 {
+  font-size: 15px;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.step-details p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+
+.step-details ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.step-details li {
+  margin-bottom: 4px;
+}
+
 .verify-card p {
   color: var(--text-muted);
   font-size: 13px;

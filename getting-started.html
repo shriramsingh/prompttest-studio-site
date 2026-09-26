@@ -58,6 +58,23 @@
           <li>Launch <strong>PromptTest Studio</strong> from your Start Menu or Desktop shortcut.</li>
         </ul>
 
+        <!-- SmartScreen Notice -->
+        <div class="smartscreen-notice" style="margin: 20px 0;">
+          <div class="smartscreen-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="smartscreen-content">
+            <h3>Windows SmartScreen Notice: "Windows protected your PC"?</h3>
+            <p>
+              When you first launch the installer, Windows Defender SmartScreen may show a blue warning because this is an independent, community-distributed release. The app is 100% safe, verified, and local-first:
+            </p>
+            <div class="smartscreen-steps">
+              <div><strong>1.</strong> Click the underlined link: <strong>"More info"</strong></div>
+              <div><strong>2.</strong> Click the button: <strong>"Run anyway"</strong></div>
+            </div>
+          </div>
+        </div>
+
         <!-- Step 2 -->
         <h2>Step 2: Prepare your Android Device</h2>
         <p>PromptTest Studio communicates with physical Android devices or official Android Emulators using ADB (Android Debug Bridge).</p>
@@ -106,15 +123,68 @@ Assert "Welcome to your Dashboard" is visible</code></pre>
 
         <p>Click <strong>Run Suite</strong>. Studio will execute each step on the physical device, stream real-time pass/fail states, and save verification screenshots.</p>
 
-        <!-- Pro Tips & Wi-Fi ADB -->
-        <h2>💡 Pro Tip: Wireless ADB (Untethered Testing)</h2>
-        <p>Prefer testing without USB cables? You can pair your Android device over local Wi-Fi:</p>
-        <pre class="code-box"><code># 1. Connect phone via USB initially
-adb tcpip 5555
+        <!-- Wireless Wi-Fi Testing Guide -->
+        <h2>📶 How to Connect &amp; Test over Wi-Fi (Untethered)</h2>
+        <p>You can control and test Android devices completely wire-free over your local Wi-Fi network. Follow these steps for both your mobile device and PromptTest Studio:</p>
 
-# 2. Disconnect USB cable and connect via device IP (found in Wi-Fi settings)
-adb connect 192.168.1.150:5555</code></pre>
-        <p>PromptTest Studio will immediately detect the wireless session.</p>
+        <h3>Part A: Setup on your Android Mobile Device</h3>
+        <div class="guide-step-list">
+          <div class="guide-step-item">
+            <div class="step-badge">A1</div>
+            <div class="step-details">
+              <h4>Android 11, 12, 13, and 14+ (Native Wireless Debugging)</h4>
+              <p>No USB cable is required at any point:</p>
+              <ul>
+                <li>Ensure both your Android phone and Windows PC are connected to the <strong>same Wi-Fi network</strong>.</li>
+                <li>Go to <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Developer options</strong>.</li>
+                <li>Toggle on <strong>Wireless debugging</strong> and tap <strong>Allow</strong> for your current Wi-Fi network.</li>
+                <li>Tap directly on the <em>"Wireless debugging"</em> label to open its settings.</li>
+                <li>Tap <strong>"Pair device with pairing code"</strong>. A popup will display a <strong>6-digit Wi-Fi pairing code</strong>, your device's <strong>IP address</strong>, and a <strong>port number</strong> (e.g. <code>192.168.1.150:42135</code>). Keep this screen open.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="guide-step-item">
+            <div class="step-badge">A2</div>
+            <div class="step-details">
+              <h4>Android 10 and Older (USB-Assisted Wi-Fi)</h4>
+              <p>For older Android versions, initiate Wi-Fi mode once using your cable:</p>
+              <ul>
+                <li>Connect your device to your PC with a USB cable.</li>
+                <li>Open PowerShell and run: <code style="color: var(--accent-light);">adb tcpip 5555</code></li>
+                <li>Disconnect the USB cable.</li>
+                <li>Find your phone's IP address under <strong>Settings</strong> &gt; <strong>About phone</strong> &gt; <strong>Status</strong> &gt; <strong>IP address</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3>Part B: Connect inside PromptTest Studio Desktop</h3>
+        <div class="guide-step-list">
+          <div class="guide-step-item">
+            <div class="step-badge">B1</div>
+            <div class="step-details">
+              <h4>Open the Wireless Connection Modal</h4>
+              <p>In the top Studio navigation bar, click the <strong>Device Selector</strong> dropdown and choose <strong>"Connect Device over Wi-Fi"</strong> (or click the Wi-Fi symbol).</p>
+            </div>
+          </div>
+
+          <div class="guide-step-item">
+            <div class="step-badge">B2</div>
+            <div class="step-details">
+              <h4>Enter IP Address, Port &amp; Pairing Code</h4>
+              <p>Enter the IP address and port displayed on your phone's pairing screen (e.g., <code>192.168.1.150</code> and port <code>42135</code>). If pairing for the first time on Android 11+, type in the 6-digit code.</p>
+            </div>
+          </div>
+
+          <div class="guide-step-item">
+            <div class="step-badge">B3</div>
+            <div class="step-details">
+              <h4>Click Connect &amp; Start Testing</h4>
+              <p>Click <strong>Connect</strong>. Studio automatically authenticates with the device, turns the status badge green (<em>Connected: Device Name</em>), wakes the device display, and starts mirroring your screen untethered!</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Bottom Banner -->

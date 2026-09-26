@@ -135,15 +135,40 @@ Wait 2 seconds</code></pre>
           <li><strong>Masks:</strong> You can drag bounding boxes over fluctuating areas (like digital clocks, Wi-Fi signal meters, and dynamic banners) to exclude them from comparison.</li>
         </ul>
 
-        <h2>5. Troubleshooting Device Connections</h2>
-        <h3>Device shows "Unauthorized"</h3>
+        <h2>5. Untethered Testing over Wi-Fi (Wireless ADB)</h2>
         <p>
-          Unlock your Android phone, look for the popup titled <em>"Allow USB debugging?"</em>, check the box <em>"Always allow from this computer"</em>, and tap <strong>Allow</strong>.
+          PromptTest Studio supports full untethered device testing over your local 2.4 GHz or 5 GHz Wi-Fi network. 
+          Both physical device controls and live streaming operate without an attached USB cable.
+        </p>
+
+        <h3>Device-Side Setup</h3>
+        <ul>
+          <li><strong>Android 11, 12, 13, and 14+:</strong> Connect phone and PC to the same Wi-Fi. Go to <em>Settings &gt; Developer options &gt; Wireless debugging</em> and toggle on. Tap <em>Pair device with pairing code</em> to reveal your 6-digit PIN, IP address, and port.</li>
+          <li><strong>Android 10 and Older:</strong> Connect via USB cable once and execute <code>adb tcpip 5555</code>. Then disconnect the USB cable and locate your device's IP under <em>Settings &gt; About phone &gt; Status</em>.</li>
+        </ul>
+
+        <h3>Studio-Side Connection</h3>
+        <ul>
+          <li>In the Studio top toolbar, click the <strong>Device Selector</strong> dropdown and choose <strong>"Connect Device over Wi-Fi"</strong>.</li>
+          <li>Enter the IP address, port, and 6-digit pairing code shown on your Android device.</li>
+          <li>Click <strong>Connect</strong>. The Studio device badge turns green and live mirroring activates instantly.</li>
+        </ul>
+
+        <h2>6. Troubleshooting &amp; Installation FAQ</h2>
+        <h3>Windows SmartScreen: "Windows protected your PC"</h3>
+        <p>
+          Because PromptTest Studio is an independent community application, Windows Defender SmartScreen may display an initial warning on first launch.
+          To proceed: click <strong>"More info"</strong>, then click <strong>"Run anyway"</strong>. The installer is 100% safe, verified, and local-first.
+        </p>
+
+        <h3>Device shows "Unauthorized" in Studio</h3>
+        <p>
+          Unlock your Android phone, look for the dialog titled <em>"Allow USB debugging?"</em>, check the box <em>"Always allow from this computer"</em>, and tap <strong>Allow</strong>.
         </p>
 
         <h3>Studio does not detect the device</h3>
         <ul>
-          <li>Verify your USB cable supports data transfer (some charging-only cables do not).</li>
+          <li>Verify your USB cable supports data transfer (some charging cables do not include data lines).</li>
           <li>Ensure USB Connection Mode on your phone is set to <strong>File Transfer / MTP</strong> rather than "Charge only".</li>
           <li>Run <code>adb kill-server &amp;&amp; adb start-server</code> in PowerShell to reset the local ADB daemon.</li>
         </ul>

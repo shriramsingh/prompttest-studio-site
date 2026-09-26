@@ -85,9 +85,22 @@
         </details>
 
         <details class="faq-item">
+          <summary>Why does Windows show "Windows protected your PC" during install?</summary>
+          <div class="faq-content">
+            Microsoft Defender SmartScreen displays this alert on new applications that do not carry a paid enterprise code-signing certificate. PromptTest Studio is an independent, community-driven tool with open release manifests and SHA-256 integrity checksums.
+            <br /><br />
+            To install: click <strong>"More info"</strong> on the blue SmartScreen dialog, then click the <strong>"Run anyway"</strong> button. The installer is completely safe, local-first, and contains zero adware or spyware.
+          </div>
+        </details>
+
+        <details class="faq-item">
           <summary>Can I connect my device over Wi-Fi without a USB cable?</summary>
           <div class="faq-content">
-            Yes. Once you enable wireless debugging (or run <code>adb tcpip 5555</code> and <code>adb connect &lt;device-ip&gt;:5555</code>), PromptTest Studio will automatically detect the wireless connection and mirror the screen untethered.
+            Yes, full untethered wireless testing is supported!
+            <ul>
+              <li><strong>Android 11+:</strong> On your phone, go to <em>Settings &gt; Developer options &gt; Wireless debugging</em> and toggle it on. Tap <em>Pair device with pairing code</em>. In Studio, click the device dropdown, select <em>Connect over Wi-Fi</em>, enter your phone's IP, port, and 6-digit code, and click Connect.</li>
+              <li><strong>Android 10 &amp; older:</strong> Connect via USB once, run <code>adb tcpip 5555</code> in PowerShell, disconnect the USB cable, and enter your phone's IP address in Studio.</li>
+            </ul>
           </div>
         </details>
 
