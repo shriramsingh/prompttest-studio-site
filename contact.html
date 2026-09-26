@@ -1,9 +1,145 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Contact | PromptTest Studio</title><link rel="stylesheet" href="styles/styles.css" /></head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Get support, ask questions, or connect with the PromptTest Studio team and community." />
+    <meta property="og:title" content="Community & Support | PromptTest Studio" />
+    <title>Community & Support | PromptTest Studio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
   <body>
-    <header class="nav shell"><a class="brand" href="index.html"><span class="brand-mark">P</span><span>PromptTest <strong>Studio</strong></span></a><nav><a href="features.html">Features</a><a href="getting-started.html">Get started</a><a href="downloads.html">Downloads</a><a href="contact.html">Contact</a><a href="changelog.html">Changelog</a><a href="studio.html">Docs</a></nav></header>
-    <main class="shell page"><p class="eyebrow"><span></span> We would like to hear from you</p><h1>Questions, feedback,<br /><em>or partnerships.</em></h1><p class="lede">For support, early access, licensing, or business enquiries, open an issue or start a discussion in the GitHub repository.</p><div class="contact-grid"><a href="https://github.com/shriramsingh/prompttest-studio-site/issues/new" class="contact-card"><strong>Product support ↗</strong><span>Report a problem with a release or installation.</span></a><a href="https://github.com/shriramsingh/prompttest-community/discussions" class="contact-card"><strong>Community ↗</strong><span>Ask questions and share feedback.</span></a><a href="https://github.com/shriramsingh/prompttest-community/issues/new" class="contact-card"><strong>Business enquiry ↗</strong><span>Discuss licensing, teams, and partnerships.</span></a></div></main>
-    <footer class="shell"><span>© 2026 PromptTest Studio</span><a href="index.html">Home</a><a href="faq.html">FAQ</a></footer>
+    <!-- Navigation Header -->
+    <header class="header-wrap">
+      <div class="shell nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">P</span>
+          <span>PromptTest <strong>Studio</strong></span>
+        </a>
+        <nav class="nav-links">
+          <a href="features.html">Features</a>
+          <a href="getting-started.html">Get Started</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="studio.html">Docs</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Community</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-primary btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+            <span>Download .exe</span>
+            <span>↓</span>
+          </a>
+          <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="shell page-container">
+      <div class="page-header">
+        <span class="eyebrow">Connect &amp; Collaborate</span>
+        <h1>Community &amp; <span class="gradient-text">Product Support</span></h1>
+        <p class="lede">Have questions, feedback, or need help connecting your device? Reach out through our community channels or check our documentation.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a href="https://github.com/shriramsingh/prompttest-community/issues/new" target="_blank" rel="noreferrer" class="contact-card">
+          <div class="card-icon">🐛</div>
+          <h3>Bug Reports <span>↗</span></h3>
+          <p>Encountered an issue with device mirroring, element detection, or installation? Open an issue on GitHub with reproduction steps.</p>
+        </a>
+
+        <a href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer" class="contact-card">
+          <div class="card-icon">💬</div>
+          <h3>Community Discussions <span>↗</span></h3>
+          <p>Join other testers and developers to share test workflows, ask implementation questions, and exchange best practices.</p>
+        </a>
+
+        <a href="https://github.com/shriramsingh/prompttest-community/issues/new" target="_blank" rel="noreferrer" class="contact-card">
+          <div class="card-icon">🚀</div>
+          <h3>Feature Requests <span>↗</span></h3>
+          <p>Have an idea for a new plain-English command or an enhancement to the visual inspector? Submit a feature suggestion.</p>
+        </a>
+      </div>
+
+      <div class="verify-card" style="margin-top: 40px;">
+        <h3>💡 Tips for fast troubleshooting</h3>
+        <p>When reporting an issue, including the following details helps resolve it quickly:</p>
+        <ul>
+          <li><strong>Windows Version:</strong> (e.g. Windows 11 23H2 64-bit)</li>
+          <li><strong>Android Device Model &amp; OS:</strong> (e.g. Samsung Galaxy S22 running Android 14)</li>
+          <li><strong>Connection Type:</strong> USB Cable or Wireless ADB</li>
+          <li><strong>The Specific Test Step:</strong> (e.g. failure during <code>Tap "Checkout"</code>)</li>
+        </ul>
+      </div>
+
+      <!-- Bottom CTA Banner -->
+      <div class="cta-banner" style="margin-top: 50px;">
+        <h2>Ready to try PromptTest Studio?</h2>
+        <p>Download the latest release and run your first test in minutes.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-lg btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+            <span>Download for Windows (.exe)</span>
+            <span>↓</span>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="getting-started.html">
+            <span>Getting Started Guide</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <span class="brand-mark">P</span>
+              <span>PromptTest <strong>Studio</strong></span>
+            </a>
+            <p>The visual desktop IDE for autonomous mobile QA testing on Android devices with plain English.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="changelog.html">Release Changelog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="getting-started.html">Getting Started</a></li>
+              <li><a href="studio.html">Documentation</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="contact.html">Support &amp; Feedback</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community" target="_blank" rel="noreferrer">GitHub Community ↗</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer">Discussions ↗</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 PromptTest Studio. All rights reserved.</span>
+          <span>Distributed via GitHub Releases</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/releases.js"></script>
   </body>
 </html>

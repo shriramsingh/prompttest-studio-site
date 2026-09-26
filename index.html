@@ -3,94 +3,341 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="PromptTest Studio is a visual desktop IDE for autonomous mobile QA." />
-    <title>PromptTest Studio | Visual mobile QA</title>
+    <meta name="description" content="PromptTest Studio is the visual desktop IDE for autonomous Android mobile QA with plain English." />
+    <meta property="og:title" content="PromptTest Studio | Visual Mobile QA for Android" />
+    <meta property="og:description" content="Turn any Android device into an intuitive test workspace. Author tests in plain English, inspect native elements, and get instant visual evidence." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shriramsingh.github.io/prompttest-studio-site/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>PromptTest Studio | Visual Mobile QA for Android</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <header class="nav shell">
-      <a class="brand" href="./">
-        <span class="brand-mark">P</span>
-        <span>PromptTest <strong>Studio</strong></span>
-      </a>
-      <nav>
-        <a href="features.html">Features</a>
-        <a href="getting-started.html">Get started</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://github.com/shriramsingh/prompttest-studio-site/releases" target="_blank" rel="noreferrer">Releases ↗</a>
-      <a href="changelog.html">Changelog</a><a href="studio.html">Docs</a></nav>
+    <!-- Top Navigation Header -->
+    <header class="header-wrap">
+      <div class="shell nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">P</span>
+          <span>PromptTest <strong>Studio</strong></span>
+        </a>
+        <nav class="nav-links">
+          <a href="features.html">Features</a>
+          <a href="getting-started.html">Get Started</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="studio.html">Docs</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Community</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-primary btn-download-primary" id="download-button" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+            <span>Download .exe</span>
+            <span>↓</span>
+          </a>
+          <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
     </header>
 
     <main>
+      <!-- Hero Section -->
       <section class="hero shell">
-        <div class="hero-copy">
-          <p class="eyebrow"><span></span> The visual QA workspace for Android teams</p>
-          <h1>Find the failure<br />before your users do.</h1>
-          <p class="lede">PromptTest Studio turns a connected Android device into a clear, inspectable test workspace — from the first tap to the evidence behind every result.</p>
-          <div class="actions">
-            <a class="button primary" id="download-button" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
-              Download for Windows <span>↓</span>
-            </a>
-            <a class="button secondary" href="https://github.com/shriramsingh/prompttest-community" target="_blank" rel="noreferrer">
-              View on GitHub <span>↗</span>
-            </a>
-          </div>
-          <p class="fine-print" id="download-note">Local-first · Windows desktop app · Android + ADB</p>
-          <div class="hero-meta"><span><b>01</b> Explore a real device</span><span><b>02</b> Author readable steps</span><span><b>03</b> Share evidence</span></div>
+        <a href="downloads.html" class="hero-pill">
+          <span class="dot"></span>
+          <span>PromptTest Studio <strong class="release-tag-text">v0.1.0</strong> is now available for Windows</span>
+          <span>→</span>
+        </a>
+        
+        <h1>
+          Automate Mobile QA with<br />
+          <span class="gradient-text">Plain English.</span>
+        </h1>
+        
+        <p class="hero-lede">
+          Connect your Android device over ADB, visually inspect native elements with one click, 
+          author readable test steps, and get real-time visual proof of every pass and fail.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+            <span>Download for Windows (.exe)</span>
+            <span>↓</span>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="getting-started.html">
+            <span>Quick Start Guide</span>
+            <span>→</span>
+          </a>
         </div>
-        <div class="hero-visual" aria-label="PromptTest Studio product preview">
-          <div class="glow"></div>
-          <div class="window">
-            <div class="window-bar"><i></i><i></i><i></i><span>PromptTest Studio</span><b>● Connected</b></div>
+
+        <div class="hero-meta">
+          <span id="download-note">Windows 10 / 11 (64-bit) · NSIS Installer</span>
+          <span>•</span>
+          <span>Android 7.0+ over ADB</span>
+          <span>•</span>
+          <span>100% Local &amp; Private</span>
+        </div>
+
+        <!-- Realistic Desktop IDE Mockup -->
+        <div class="mockup-container">
+          <div class="mockup-glow"></div>
+          <div class="studio-window">
+            <div class="window-titlebar">
+              <div class="traffic-lights">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="window-title">PromptTest Studio — [Suite: Onboarding Flow]</span>
+              <div class="device-badge">
+                <span class="pulse"></span>
+                <span>Connected: Google Pixel 7 (API 34)</span>
+              </div>
+            </div>
+
             <div class="window-body">
-              <aside><div class="mini-logo">P</div><div class="side-line active"></div><div class="side-line"></div><div class="side-line"></div><div class="side-line short"></div></aside>
-              <div class="workspace">
-                <div class="workspace-head"><span>LIVE DEVICE</span><strong>Pixel_7_API_35</strong><button>Run suite</button></div>
-                <div class="phone-wrap"><div class="phone"><div class="phone-notch"></div><div class="phone-screen"><div class="screen-title">Welcome back</div><div class="screen-card"></div><div class="screen-button">Sign in</div><div class="screen-button muted"></div></div></div><div class="inspect"><span>INSPECTED ELEMENT</span><strong>Sign in</strong><code>Tap "Sign in"</code><small>bounds: 48, 612 · clickable</small></div></div>
-                <div class="steps"><span class="pass">✓</span> Launch app <span class="pass">✓</span> Tap “Sign in” <span class="pending">○</span> Assert dashboard</div>
+              <!-- Sidebar -->
+              <aside class="mockup-sidebar">
+                <div class="mockup-sidebar-icon active" title="Device Canvas">📱</div>
+                <div class="mockup-sidebar-icon" title="Element Inspector">🎯</div>
+                <div class="mockup-sidebar-icon" title="Test Suites">📝</div>
+                <div class="mockup-sidebar-icon" title="Visual Baselines">🖼️</div>
+                <div class="mockup-sidebar-icon" title="Settings">⚙️</div>
+              </aside>
+
+              <!-- Device Mirror & Inspector -->
+              <div class="mockup-canvas">
+                <div class="canvas-device-frame">
+                  <div class="device-camera"></div>
+                  <div class="device-screen">
+                    <div class="screen-app-bar">
+                      <span>9:41 AM</span>
+                      <span>● 5G 100%</span>
+                    </div>
+                    <div class="screen-card">
+                      <div style="font-size: 13px; font-weight: 700; margin-bottom: 6px;">Sign in to Acme</div>
+                      <div style="font-size: 10px; color: #9ca3af;">Enter your credentials to continue</div>
+                    </div>
+                    <div class="screen-input">user@example.com</div>
+                    <div class="screen-input">••••••••••••</div>
+                    <div class="inspected-target">
+                      <div class="target-tooltip">Sign In · id/btn_login [clickable]</div>
+                      Sign In
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stream Execution & Plain-English Steps -->
+              <div class="mockup-panel">
+                <div class="panel-header">
+                  <span>LIVE STEP EXECUTION</span>
+                  <span style="color: var(--accent-light);">Streaming (SSE)</span>
+                </div>
+                <div class="panel-body">
+                  <div class="stream-step pass">
+                    <span class="step-icon">✓</span>
+                    <div class="step-text">
+                      <div>Launch "com.acme.shop"</div>
+                      <span class="step-time">0.42s · Activity started</span>
+                    </div>
+                  </div>
+                  <div class="stream-step pass">
+                    <span class="step-icon">✓</span>
+                    <div class="step-text">
+                      <div>Type "user@example.com" into "Email"</div>
+                      <span class="step-time">0.28s · Text committed</span>
+                    </div>
+                  </div>
+                  <div class="stream-step pass">
+                    <span class="step-icon">✓</span>
+                    <div class="step-text">
+                      <div>Type "secret" into "Password"</div>
+                      <span class="step-time">0.19s · Masked input</span>
+                    </div>
+                  </div>
+                  <div class="stream-step active">
+                    <span class="step-icon">●</span>
+                    <div class="step-text">
+                      <div>Tap "Sign In"</div>
+                      <span class="step-time" style="color: var(--accent-cyan);">Executing tap at (540, 1120)...</span>
+                    </div>
+                  </div>
+                  <div class="stream-step" style="opacity: 0.6;">
+                    <span class="step-icon" style="color: var(--text-dim);">○</span>
+                    <div class="step-text">
+                      <div>Assert "Welcome back" is visible</div>
+                      <span class="step-time">Pending</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="proof shell"><span>BUILT FOR THE MOMENT BETWEEN IDEA AND CONFIDENCE</span><span>ANDROID / ADB</span><span>LOCAL-FIRST</span><span>PLAIN-ENGLISH SPECS</span></section>
-
-      <section class="section shell" id="features">
-        <div class="section-intro"><div><p class="eyebrow">One workspace. Every signal.</p><h2>From first tap to<br /><em>reliable evidence.</em></h2></div><p class="section-summary">Stop switching between a device mirror, an inspector, a terminal, and a report viewer. Studio keeps the context together so your team can spend time fixing quality, not assembling it.</p></div>
-        <div class="feature-grid">
-          <article><div class="icon">⌖</div><h3>See what the device sees</h3><p>Mirror a connected Android device and inspect native elements, bounds, labels, and resource IDs in context.</p></article>
-          <article><div class="icon">✦</div><h3>Turn intent into steps</h3><p>Click an element to generate readable Tap, Type, and Assert instructions for your test spec.</p></article>
-          <article><div class="icon">◒</div><h3>Know why it failed</h3><p>Stream execution status, screenshots, reports, and visual baseline comparisons from one place.</p></article>
+      <!-- Proof / Trust Strip -->
+      <section class="proof-strip">
+        <div class="shell">
+          <span><strong>ANDROID &amp; ADB</strong> Native Support</span>
+          <span><strong>PLAIN ENGLISH</strong> Readable Specs</span>
+          <span><strong>ZERO CLOUD</strong> 100% Local-First</span>
+          <span><strong>REAL-TIME</strong> Live SSE Stream</span>
         </div>
       </section>
 
-      <section class="quote shell"><div class="quote-mark">“</div><blockquote>Make the test readable enough that the whole team can understand what happened.</blockquote><p>PromptTest Studio is built around that simple idea.</p></section>
+      <!-- Core Features Bento Grid -->
+      <section class="section shell" id="features">
+        <div class="section-head">
+          <span class="eyebrow">Core Capabilities</span>
+          <h2>Everything you need for fast, reliable mobile QA</h2>
+          <p>Stop juggling device mirrors, complex selector finders, and CLI terminals. Studio puts the complete test lifecycle in one focused desktop workspace.</p>
+        </div>
 
-      <section class="how shell" id="how-it-works">
-        <div><p class="eyebrow">A simpler workflow</p><h2>Connect. Explore.<br /><em>Prove.</em></h2></div>
-        <div class="steps-large"><div><b>01</b><strong>Connect your Android device</strong><p>Use USB or Wi-Fi ADB and see the live screen inside Studio.</p></div><div><b>02</b><strong>Build a readable flow</strong><p>Inspect, click, and compose a test spec in plain English.</p></div><div><b>03</b><strong>Run and share evidence</strong><p>Review steps, screenshots, reports, and visual differences.</p></div></div>
+        <div class="bento-grid">
+          <div class="bento-card">
+            <div class="bento-icon">📱</div>
+            <h3>Interactive Device Canvas</h3>
+            <p>Direct ADB screen mirroring with low-latency touch interactions. Tap, swipe, wake, and navigate directly from your desktop monitor.</p>
+            <span class="bento-pill">USB &amp; Wi-Fi ADB</span>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon">🎯</div>
+            <h3>Visual Element Inspector</h3>
+            <p>Hover over any native UI element to view resource IDs, accessibility labels, text, bounds, and hierarchy without digging through messy XML dumps.</p>
+            <span class="bento-pill">Native Accessibility Tree</span>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon">✍️</div>
+            <h3>Click-to-Prompt Authoring</h3>
+            <p>Compose tests as fast as you can click. Simply click an element on screen to automatically generate readable <code>Tap</code>, <code>Type</code>, and <code>Assert</code> steps.</p>
+            <span class="bento-pill">Plain English Syntax</span>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon">⚡</div>
+            <h3>Real-Time Step Stream</h3>
+            <p>Live Server-Sent Events (SSE) stream every step execution with sub-second precision, live pass/fail badges, and instantaneous failure diagnostics.</p>
+            <span class="bento-pill">Live SSE Telemetry</span>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon">🖼️</div>
+            <h3>Visual Baselines &amp; Regressions</h3>
+            <p>Compare current screens against approved reference baselines. Easily create masks for dynamic timestamps, ads, or animated areas.</p>
+            <span class="bento-pill">Pixel-Diff Engine</span>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon">🔒</div>
+            <h3>100% Local &amp; Private</h3>
+            <p>PromptTest Studio runs entirely on your local machine. Your device interactions, test credentials, and screenshots never touch third-party servers.</p>
+            <span class="bento-pill">Local Desktop App</span>
+          </div>
+        </div>
       </section>
 
-      <section class="cta shell">
-        <div><p class="eyebrow">Start testing today</p><h2>Your next test should feel<br /><em>obvious.</em></h2></div>
-        <a class="button primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">Get PromptTest Studio <span>↓</span></a>
+      <!-- Workflow Section -->
+      <section class="section shell" id="workflow">
+        <div class="section-head">
+          <span class="eyebrow">How It Works</span>
+          <h2>From connected device to test evidence in 3 steps</h2>
+          <p>No complicated Appium server setup or fragile XPath chains.</p>
+        </div>
+
+        <div class="workflow-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Connect your device</h3>
+            <p>Plug in your Android phone via USB or connect over Wi-Fi. Ensure USB debugging is enabled and Studio detects it instantly.</p>
+            <code>adb devices</code>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Compose readable steps</h3>
+            <p>Interact with the live screen. Click any button or input field to add human-readable actions to your test specification.</p>
+            <code>Tap "Sign In"<br />Assert "Profile" is visible</code>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Run &amp; export evidence</h3>
+            <p>Execute tests individually or in automated suites. Review step-by-step screenshots, timing reports, and pass/fail evidence.</p>
+            <code>Suite passed: 8/8 (2.4s)</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Banner -->
+      <section class="shell">
+        <div class="cta-banner">
+          <h2>Start testing your Android apps visually today</h2>
+          <p>Download the standalone Windows desktop application. Free to try, local-first, and ready in minutes.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+              <span>Download for Windows (.exe)</span>
+              <span>↓</span>
+            </a>
+            <a class="btn btn-secondary btn-lg" href="getting-started.html">
+              <span>Read the Setup Guide</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer class="shell"><span>© 2026 PromptTest Studio</span><span>Open distribution via GitHub Releases</span><a href="https://github.com/shriramsingh/prompttest-community">GitHub ↗</a></footer>
-    <script>
-      fetch('https://api.github.com/repos/shriramsingh/prompttest-studio-site/releases/latest')
-        .then((response) => response.ok ? response.json() : Promise.reject())
-        .then((release) => {
-          const installer = release.assets && release.assets.find((asset) => asset.name.toLowerCase().endsWith('.exe'));
-          if (installer) {
-            document.querySelector('#download-button').href = installer.browser_download_url;
-            document.querySelector('#download-note').textContent = `${release.tag_name} · Windows installer · Free to try`;
-          }
-        })
-        .catch(() => {});
-    </script>
+    <!-- Footer -->
+    <footer>
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <span class="brand-mark">P</span>
+              <span>PromptTest <strong>Studio</strong></span>
+            </a>
+            <p>The visual desktop IDE for autonomous mobile QA testing on Android devices with plain English.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="changelog.html">Release Changelog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="getting-started.html">Getting Started</a></li>
+              <li><a href="studio.html">Documentation</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="contact.html">Support &amp; Feedback</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community" target="_blank" rel="noreferrer">GitHub Community ↗</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer">Discussions ↗</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 PromptTest Studio. All rights reserved.</span>
+          <span>Distributed via GitHub Releases</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/releases.js"></script>
   </body>
 </html>

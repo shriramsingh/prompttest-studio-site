@@ -3,25 +3,183 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Explore PromptTest Studio features for visual Android QA." />
+    <meta name="description" content="Explore PromptTest Studio features: Android screen mirroring, element inspector, plain-English test authoring, and visual regression." />
+    <meta property="og:title" content="Features | PromptTest Studio" />
+    <meta property="og:description" content="Explore all features of PromptTest Studio for visual Android mobile QA." />
     <title>Features | PromptTest Studio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <header class="nav shell"><a class="brand" href="index.html"><span class="brand-mark">P</span><span>PromptTest <strong>Studio</strong></span></a><nav><a href="features.html">Features</a><a href="getting-started.html">Get started</a><a href="downloads.html">Downloads</a><a href="contact.html">Contact</a><a href="changelog.html">Changelog</a><a href="studio.html">Docs</a></nav></header>
-    <main class="shell page">
-      <p class="eyebrow"><span></span> Product capabilities</p>
-      <h1>Everything you need to<br /><em>test with confidence.</em></h1>
-      <p class="lede">PromptTest Studio brings device exploration, readable test authoring, and actionable evidence into one focused desktop workspace.</p>
-      <div class="feature-grid">
-        <article><div class="icon">⌖</div><h3>Interactive device canvas</h3><p>Mirror a connected Android device and interact with it directly from the Studio workspace.</p></article>
-        <article><div class="icon">◉</div><h3>Visual element inspector</h3><p>Inspect native controls, resource IDs, labels, bounds, clickability, and hierarchy details.</p></article>
-        <article><div class="icon">✦</div><h3>Click-to-prompt authoring</h3><p>Generate Tap, Type, and Assert steps from the elements you select on screen.</p></article>
-        <article><div class="icon">◒</div><h3>Live execution stream</h3><p>Follow each test step with timing, pass/fail state, and diagnostics as it runs.</p></article>
-        <article><div class="icon">▣</div><h3>Reports and evidence</h3><p>Review screenshots, execution history, errors, and shareable test results.</p></article>
-        <article><div class="icon">◇</div><h3>Visual baselines</h3><p>Compare current screens with approved references and manage masks for dynamic regions.</p></article>
+    <!-- Navigation Header -->
+    <header class="header-wrap">
+      <div class="shell nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">P</span>
+          <span>PromptTest <strong>Studio</strong></span>
+        </a>
+        <nav class="nav-links">
+          <a href="features.html">Features</a>
+          <a href="getting-started.html">Get Started</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="studio.html">Docs</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Community</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-primary btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+            <span>Download .exe</span>
+            <span>↓</span>
+          </a>
+          <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="shell page-container">
+      <div class="page-header">
+        <span class="eyebrow">Product Tour</span>
+        <h1>Engineered for <span class="gradient-text">effortless mobile QA</span></h1>
+        <p class="lede">PromptTest Studio replaces fragile test scripts, fragmented command-line tools, and complex Appium setups with an integrated desktop workspace.</p>
+      </div>
+
+      <!-- Feature Deep Dives Bento -->
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div class="bento-icon">📱</div>
+          <h3>Interactive Device Mirroring</h3>
+          <p>Stream your Android screen directly to your desktop in real-time. Interact seamlessly using your mouse for taps, long presses, and swipes. Includes a virtual navigation bar for Back, Home, and Recents.</p>
+          <span class="bento-pill">USB 3.0 &amp; Wi-Fi 5GHz ADB</span>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">🎯</div>
+          <h3>Native Element Inspector</h3>
+          <p>Hover over any native Android control to view its resource ID, text label, class name, bounding box coordinates, and clickability flags without running cumbersome XML dump scripts.</p>
+          <span class="bento-pill">Instant UI Hierarchy</span>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">✍️</div>
+          <h3>Click-to-Prompt Test Authoring</h3>
+          <p>Build robust test flows without writing boilerplate code. Selecting an element automatically drafts plain-English test instructions such as <code>Tap "Checkout"</code> or <code>Type "demo@test.com" into "Email"</code>.</p>
+          <span class="bento-pill">Human-Readable Specs</span>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">⚡</div>
+          <h3>Live Step Execution Stream</h3>
+          <p>Watch tests run in real time. Server-Sent Events stream live status, execution duration per step, and diagnostic stack traces immediately upon failure.</p>
+          <span class="bento-pill">Millisecond Precision</span>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">🖼️</div>
+          <h3>Visual Baselines &amp; Pixel Diff</h3>
+          <p>Capture screenshots at critical test steps and compare them against approved baselines. Set exclude masks over dynamic elements like current time, battery level, or user avatars.</p>
+          <span class="bento-pill">Visual Regression Defense</span>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">🔋</div>
+          <h3>Device Manager &amp; Quick Wake</h3>
+          <p>Auto-detects connected devices over USB or local Wi-Fi. Features one-click screen wake, lock screen bypass, package installation, and background app clearing.</p>
+          <span class="bento-pill">Zero Manual Setup</span>
+        </div>
+      </div>
+
+      <!-- Syntax Preview Section -->
+      <section class="section" style="padding-bottom: 20px;">
+        <div class="section-head">
+          <span class="eyebrow">Readable Syntax</span>
+          <h2>Tests anyone on the team can read and maintain</h2>
+          <p>No fragile CSS selectors, complex XPath queries, or nested async promises. Tests read like natural instructions.</p>
+        </div>
+
+        <div class="doc-shell" style="max-width: 800px;">
+          <h3 style="margin-top: 0;">Example E-Commerce Flow</h3>
+          <pre class="code-box"><code>Launch "com.example.retailapp"
+Tap "Search Products"
+Type "Wireless Headphones" into "Search Bar"
+Tap "Search"
+Assert "Sony WH-1000XM5" is visible
+Tap "Add to Cart"
+Assert "Cart Badge (1)" is visible
+Tap "Proceed to Checkout"
+Assert "Payment Options" is visible</code></pre>
+          <p style="color: var(--text-muted); font-size: 13px; margin-top: 14px; margin-bottom: 0;">
+            Studio automatically resolves element labels, resource IDs, and accessibility strings at runtime, maintaining test resilience even when UI attributes shift across app builds.
+          </p>
+        </div>
+      </section>
+
+      <!-- Bottom CTA Banner -->
+      <div class="cta-banner">
+        <h2>Experience PromptTest Studio today</h2>
+        <p>Download the Windows installer or check the getting started guide to run your first test in under 3 minutes.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-lg btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+            <span>Download for Windows (.exe)</span>
+            <span>↓</span>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="getting-started.html">
+            <span>Getting Started Guide</span>
+            <span>→</span>
+          </a>
+        </div>
       </div>
     </main>
-    <footer class="shell"><span>© 2026 PromptTest Studio</span><a href="index.html">Home</a><a href="https://github.com/shriramsingh/prompttest-community">GitHub ↗</a></footer>
+
+    <!-- Footer -->
+    <footer>
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <span class="brand-mark">P</span>
+              <span>PromptTest <strong>Studio</strong></span>
+            </a>
+            <p>The visual desktop IDE for autonomous mobile QA testing on Android devices with plain English.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="changelog.html">Release Changelog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="getting-started.html">Getting Started</a></li>
+              <li><a href="studio.html">Documentation</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="contact.html">Support &amp; Feedback</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community" target="_blank" rel="noreferrer">GitHub Community ↗</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer">Discussions ↗</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 PromptTest Studio. All rights reserved.</span>
+          <span>Distributed via GitHub Releases</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/releases.js"></script>
   </body>
 </html>

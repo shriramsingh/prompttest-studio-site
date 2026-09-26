@@ -3,24 +3,181 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Install and start using PromptTest Studio." />
+    <meta name="description" content="Get started with PromptTest Studio in 3 easy steps. Connect your Android device and author your first test." />
+    <meta property="og:title" content="Getting Started | PromptTest Studio" />
     <title>Getting Started | PromptTest Studio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <header class="nav shell"><a class="brand" href="index.html"><span class="brand-mark">P</span><span>PromptTest <strong>Studio</strong></span></a><nav><a href="features.html">Features</a><a href="getting-started.html">Get started</a><a href="downloads.html">Downloads</a><a href="contact.html">Contact</a><a href="changelog.html">Changelog</a><a href="studio.html">Docs</a></nav></header>
-    <main class="shell page">
-      <p class="eyebrow"><span></span> First session</p>
-      <h1>Start testing in<br /><em>three steps.</em></h1>
-      <div class="guide">
-        <section><b>01</b><div><h3>Install PromptTest Studio</h3><p>Download the latest Windows installer from the <a href="downloads.html">Downloads page</a>, run it, and follow the setup wizard.</p></div></section>
-        <section><b>02</b><div><h3>Prepare an Android device</h3><p>Enable Developer options and USB debugging. Connect by USB or Wi-Fi ADB and keep the device unlocked.</p><pre><code>adb devices</code></pre></div></section>
-        <section><b>03</b><div><h3>Explore and write your first flow</h3><p>Select a device, inspect an element, and click it to generate a readable test step. Run the suite when your flow is ready.</p><pre><code>Launch "com.example.app"
-Tap "Sign In"
-Assert "Dashboard" is visible</code></pre></div></section>
+    <!-- Navigation Header -->
+    <header class="header-wrap">
+      <div class="shell nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">P</span>
+          <span>PromptTest <strong>Studio</strong></span>
+        </a>
+        <nav class="nav-links">
+          <a href="features.html">Features</a>
+          <a href="getting-started.html">Get Started</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="studio.html">Docs</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Community</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-primary btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+            <span>Download .exe</span>
+            <span>↓</span>
+          </a>
+          <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="notice"><strong>Need help?</strong><span>Check the FAQ or contact us with your device model and the step where you got stuck.</span><a href="contact.html">Get support →</a></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="shell page-container">
+      <div class="page-header">
+        <span class="eyebrow">Quick Start Guide</span>
+        <h1>Start testing in <span class="gradient-text">three simple steps</span></h1>
+        <p class="lede">Follow this guide to get PromptTest Studio installed, connect your Android device, and run your first automated test in under five minutes.</p>
+      </div>
+
+      <div class="doc-shell">
+        <!-- Step 1 -->
+        <h2>Step 1: Download &amp; Install PromptTest Studio</h2>
+        <p>PromptTest Studio is distributed as a lightweight Windows application (per-user install, no administrative privileges required).</p>
+        <ul>
+          <li>Go to the <a href="downloads.html">Downloads page</a> and download the latest <code>.exe</code> installer.</li>
+          <li>Run the installer and follow the guided setup wizard.</li>
+          <li>Launch <strong>PromptTest Studio</strong> from your Start Menu or Desktop shortcut.</li>
+        </ul>
+
+        <!-- Step 2 -->
+        <h2>Step 2: Prepare your Android Device</h2>
+        <p>PromptTest Studio communicates with physical Android devices or official Android Emulators using ADB (Android Debug Bridge).</p>
+        
+        <h3>1. Enable Developer Options</h3>
+        <ul>
+          <li>Open <strong>Settings</strong> &gt; <strong>About phone</strong> on your Android device.</li>
+          <li>Tap <strong>Build number</strong> 7 times until you see the message <em>"You are now a developer!"</em>.</li>
+        </ul>
+
+        <h3>2. Enable USB Debugging</h3>
+        <ul>
+          <li>Go back to <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Developer options</strong>.</li>
+          <li>Toggle on <strong>USB debugging</strong>.</li>
+          <li>Connect the phone to your Windows PC with a USB cable.</li>
+          <li>When prompted with <em>"Allow USB debugging from this computer?"</em>, check <strong>Always allow</strong> and tap <strong>Allow</strong>.</li>
+        </ul>
+
+        <h3>3. (Optional) Verify via Command Prompt</h3>
+        <p>Open PowerShell or Command Prompt to confirm your device is recognized:</p>
+        <pre class="code-box"><code>adb devices</code></pre>
+        <p>You should see your device serial number listed with status <code>device</code>:</p>
+        <pre class="code-box"><code>List of devices attached
+19281FDF60002F    device</code></pre>
+
+        <!-- Step 3 -->
+        <h2>Step 3: Author and Run your First Test</h2>
+        <p>Now that your device is connected, open PromptTest Studio:</p>
+        <ul>
+          <li><strong>Select Device:</strong> In the top navigation bar, ensure your connected device is selected in the device dropdown.</li>
+          <li><strong>View Live Canvas:</strong> Your Android phone's live screen will appear in the central canvas.</li>
+          <li><strong>Inspect &amp; Click:</strong> Hover over any button or text field. Studio highlights the element boundaries. Click the element to generate test steps automatically.</li>
+        </ul>
+
+        <h3>Example Test Spec</h3>
+        <pre class="code-box"><code># Launch the application
+Launch "com.example.myapp"
+
+# Navigate through onboarding
+Tap "Get Started"
+Type "tester@example.com" into "Email address"
+Tap "Continue"
+
+# Assert outcome
+Assert "Welcome to your Dashboard" is visible</code></pre>
+
+        <p>Click <strong>Run Suite</strong>. Studio will execute each step on the physical device, stream real-time pass/fail states, and save verification screenshots.</p>
+
+        <!-- Pro Tips & Wi-Fi ADB -->
+        <h2>💡 Pro Tip: Wireless ADB (Untethered Testing)</h2>
+        <p>Prefer testing without USB cables? You can pair your Android device over local Wi-Fi:</p>
+        <pre class="code-box"><code># 1. Connect phone via USB initially
+adb tcpip 5555
+
+# 2. Disconnect USB cable and connect via device IP (found in Wi-Fi settings)
+adb connect 192.168.1.150:5555</code></pre>
+        <p>PromptTest Studio will immediately detect the wireless session.</p>
+      </div>
+
+      <!-- Bottom Banner -->
+      <div class="cta-banner" style="margin-top: 50px;">
+        <h2>Ready to run your tests?</h2>
+        <p>Download PromptTest Studio now and streamline your Android testing workflow.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-lg btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+            <span>Download for Windows (.exe)</span>
+            <span>↓</span>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="features.html">
+            <span>Explore All Features</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
     </main>
-    <footer class="shell"><span>© 2026 PromptTest Studio</span><a href="index.html">Home</a><a href="faq.html">FAQ</a></footer>
+
+    <!-- Footer -->
+    <footer>
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <span class="brand-mark">P</span>
+              <span>PromptTest <strong>Studio</strong></span>
+            </a>
+            <p>The visual desktop IDE for autonomous mobile QA testing on Android devices with plain English.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="changelog.html">Release Changelog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="getting-started.html">Getting Started</a></li>
+              <li><a href="studio.html">Documentation</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="contact.html">Support &amp; Feedback</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community" target="_blank" rel="noreferrer">GitHub Community ↗</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer">Discussions ↗</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 PromptTest Studio. All rights reserved.</span>
+          <span>Distributed via GitHub Releases</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/releases.js"></script>
   </body>
 </html>
