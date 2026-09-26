@@ -1287,11 +1287,21 @@ footer {
   }
 }
 
-.bento-icon svg, .mockup-sidebar-icon svg, .card-icon svg {
+.bento-icon svg, .mockup-sidebar-icon svg, .card-icon svg, .smartscreen-icon svg {
   display: block;
   stroke: currentColor;
   stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   fill: none;
+  flex-shrink: 0;
+}
+
+.smartscreen-icon svg {
+  width: 22px;
+  height: 22px;
+  max-width: 22px;
+  max-height: 22px;
 }
 
 .bento-icon svg {
