@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Download PromptTest Studio for Windows. Local-first desktop IDE for Android mobile QA testing." />
-    <meta property="og:title" content="Downloads | PromptTest Studio" />
-    <title>Downloads | PromptTest Studio</title>
+    <meta name="description" content="Download PromptTest Studio. Official installers, system requirements, checksum verification, and platform availability." />
+    <meta property="og:title" content="Download Center | PromptTest Studio" />
+    <meta property="og:description" content="Download PromptTest Studio for Windows (64-bit). View release notes, system requirements, and verification checksums." />
+    <title>Download Center | PromptTest Studio</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles/styles.css?v=2.2" />
   </head>
   <body>
-    <!-- Navigation Header -->
+    <!-- Top Navigation Header -->
     <header class="header-wrap">
       <div class="shell nav">
         <a class="brand" href="index.html">
@@ -32,7 +33,7 @@
             <span>↓</span>
           </a>
           <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
           </button>
@@ -43,28 +44,101 @@
     <!-- Main Content -->
     <main class="shell page-container">
       <div class="page-header">
-        <span class="eyebrow">Release Hub</span>
-        <h1>Download the <span class="gradient-text">Desktop Studio</span></h1>
-        <p class="lede">PromptTest Studio runs 100% locally on your PC. Your Android device data, test credentials, and screenshots stay securely inside your private workstation.</p>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+          <span class="eyebrow" style="margin: 0;">Release Hub</span>
+          <span class="meta-tag highlight">Current Release: v0.1.0</span>
+        </div>
+        <h1>Download <span class="gradient-text">PromptTest Studio</span></h1>
+        <p class="lede">
+          Get the desktop visual IDE for autonomous Android QA. Runs 100% locally on your machine—your app data, credentials, and test flows never leave your private workstation.
+        </p>
       </div>
 
-      <!-- Main Download Hero Card -->
-      <div class="download-hero-card">
-        <div class="download-hero-left">
-          <h2>PromptTest Studio for Windows</h2>
-          <p id="release-status">Checking for the latest release…</p>
-          <div class="download-meta-tags">
-            <span class="meta-tag highlight">Windows 10 / 11 (64-bit)</span>
-            <span class="meta-tag">NSIS Installer</span>
-            <span class="meta-tag">Android 7.0+ over ADB</span>
-            <span class="meta-tag">Local-First</span>
+      <!-- 3-Platform Cards Grid -->
+      <div class="platform-grid">
+        <!-- Windows (Active) -->
+        <div class="platform-card active">
+          <div class="platform-header">
+            <div class="platform-icon">
+              <!-- Windows SVG -->
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+              </svg>
+            </div>
+            <span class="platform-status-badge available">● Available Now</span>
           </div>
-        </div>
-        <div>
-          <a class="btn btn-primary btn-lg" id="download-link" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
-            <span>Download Installer (.exe)</span>
+          <h3>Windows (64-bit)</h3>
+          <p class="platform-desc">Official NSIS standalone installer for Windows 10 and 11 workstations.</p>
+          <ul class="platform-specs">
+            <li><span>Architecture:</span> <strong>x86_64 (64-bit)</strong></li>
+            <li><span>Format:</span> <strong>NSIS Setup (.exe)</strong></li>
+            <li><span>Download Size:</span> <strong>~30.3 MB</strong></li>
+            <li><span>Installation:</span> <strong>Per-user (No admin required)</strong></li>
+            <li><span>Tools Included:</span> <strong>Bundled Android ADB</strong></li>
+          </ul>
+          <a class="btn btn-primary btn-lg" id="download-link" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest" style="width: 100%; margin-top: auto;">
+            <span>Download for Windows (.exe)</span>
             <span>↓</span>
           </a>
+          <p id="release-status" style="font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 10px; margin-bottom: 0;">
+            Checking latest release details…
+          </p>
+        </div>
+
+        <!-- macOS (Roadmap) -->
+        <div class="platform-card upcoming">
+          <div class="platform-header">
+            <div class="platform-icon">
+              <!-- Apple SVG -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.09 1.73-.95 2.76 1.01.08 2.05-.51 2.68-1.26z"/>
+              </svg>
+            </div>
+            <span class="platform-status-badge roadmap">Planned for v0.2.0</span>
+          </div>
+          <h3>macOS</h3>
+          <p class="platform-desc">Native macOS application bundle for Apple Silicon and Intel Macs.</p>
+          <ul class="platform-specs">
+            <li><span>Architecture:</span> <strong>Universal (M1–M4 &amp; Intel)</strong></li>
+            <li><span>Format:</span> <strong>Disk Image (.dmg)</strong></li>
+            <li><span>Min. OS:</span> <strong>macOS 12.0 (Monterey+)</strong></li>
+            <li><span>Installation:</span> <strong>Drag to Applications</strong></li>
+            <li><span>Status:</span> <strong>In Build Pipeline</strong></li>
+          </ul>
+          <a class="btn btn-secondary btn-lg" href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer" style="width: 100%; margin-top: auto; opacity: 0.85;">
+            <span>Get Notified on Release ↗</span>
+          </a>
+          <p style="font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 10px; margin-bottom: 0;">
+            Follow GitHub Releases for macOS builds
+          </p>
+        </div>
+
+        <!-- Linux (Roadmap) -->
+        <div class="platform-card upcoming">
+          <div class="platform-header">
+            <div class="platform-icon">
+              <!-- Linux SVG -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.016 0C5.38 0 0 5.38 0 12.016c0 6.635 5.38 12.015 12.016 12.015 6.635 0 12.015-5.38 12.015-12.015C24.03 5.38 18.65 0 12.016 0zm0 2.403c5.31 0 9.613 4.303 9.613 9.613 0 5.31-4.303 9.612-9.613 9.612-5.31 0-9.613-4.303-9.613-9.612 0-5.31 4.303-9.613 9.613-9.613z"/>
+              </svg>
+            </div>
+            <span class="platform-status-badge roadmap">Planned for v0.2.0</span>
+          </div>
+          <h3>Linux (64-bit)</h3>
+          <p class="platform-desc">Universal packages for Ubuntu, Debian, Fedora, Arch, and derivatives.</p>
+          <ul class="platform-specs">
+            <li><span>Architecture:</span> <strong>x86_64 &amp; AArch64</strong></li>
+            <li><span>Format:</span> <strong>.AppImage &amp; .deb</strong></li>
+            <li><span>Min. glibc:</span> <strong>glibc 2.31+</strong></li>
+            <li><span>Installation:</span> <strong>Standalone Portable</strong></li>
+            <li><span>Status:</span> <strong>In Build Pipeline</strong></li>
+          </ul>
+          <a class="btn btn-secondary btn-lg" href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer" style="width: 100%; margin-top: auto; opacity: 0.85;">
+            <span>Get Notified on Release ↗</span>
+          </a>
+          <p style="font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 10px; margin-bottom: 0;">
+            Follow GitHub Releases for Linux builds
+          </p>
         </div>
       </div>
 
@@ -76,65 +150,126 @@
         <div class="smartscreen-content">
           <h3>Windows SmartScreen: "Windows protected your PC"?</h3>
           <p>
-            Because PromptTest Studio is an independent community application without an expensive enterprise code-signing certificate, Microsoft Defender SmartScreen may display an unrecognized app notice when you run the <code>.exe</code> installer. The software is 100% safe, local-first, and contains zero adware or telemetry.
+            Because PromptTest Studio is an independent community software release without an expensive enterprise code-signing certificate, Microsoft Defender SmartScreen displays an unrecognized app notice on first launch. The application is 100% safe, verified, and local-first:
           </p>
           <div class="smartscreen-steps">
             <div><strong>Step 1:</strong> On the blue SmartScreen dialog, click the underlined link: <strong>"More info"</strong>.</div>
-            <div><strong>Step 2:</strong> Click the <strong>"Run anyway"</strong> button that appears at the bottom right.</div>
-            <div><strong>Step 3:</strong> The guided setup wizard will start immediately. No admin permissions required!</div>
+            <div><strong>Step 2:</strong> Click the button in the bottom right corner: <strong>"Run anyway"</strong>.</div>
+            <div><strong>Step 3:</strong> The guided setup wizard installs Studio to your local user directory. No administrator privileges needed!</div>
           </div>
         </div>
       </div>
 
-      <!-- System Requirements & Verification with SVG Icons -->
-      <div class="bento-grid" style="margin-top: 30px;">
-        <div class="bento-card">
-          <div class="bento-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>System Requirements</h3>
-          <p>
-            • Operating System: Windows 10 (1809+) or Windows 11 64-bit<br />
-            • Memory: 4 GB RAM minimum (8 GB recommended)<br />
-            • Storage: 250 MB free disk space<br />
-            • Permissions: Standard user (No Administrator access required)
-          </p>
+      <!-- System Requirements & Compatibility Table -->
+      <section class="section" style="padding-top: 20px; padding-bottom: 40px;">
+        <div class="section-head" style="margin-bottom: 30px; text-align: left; max-width: none;">
+          <span class="eyebrow">Compatibility Matrix</span>
+          <h2>Device &amp; Operating System Specifications</h2>
+          <p>PromptTest Studio communicates directly over standard Android Debug Bridge (ADB) protocols.</p>
         </div>
 
-        <div class="bento-card">
-          <div class="bento-icon">
-            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/></svg>
-          </div>
-          <h3>Device Compatibility</h3>
-          <p>
-            • Any physical Android phone or tablet running Android 7.0+<br />
-            • Official Android Studio Virtual Devices (AVD)<br />
-            • Cloud/local emulators supporting ADB (Genymotion, BlueStacks)<br />
-            • USB cable or 2.4/5 GHz local Wi-Fi connection
-          </p>
-        </div>
-
-        <div class="bento-card">
-          <div class="bento-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3>Release Notes &amp; Integrity</h3>
-          <p>
-            Every build publishes an SHA-256 integrity checksum and detailed release notes. View recent enhancements, changes, and historical versions on our changelog.
-          </p>
-          <a href="changelog.html" style="font-weight: 600; font-size: 14px;">View Release Changelog →</a>
-        </div>
-      </div>
+        <table class="docs-table">
+          <thead>
+            <tr>
+              <th>Target</th>
+              <th>Supported Versions</th>
+              <th>Connection Methods</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Windows PC</strong></td>
+              <td>Windows 10 (1809+) or Windows 11 (64-bit)</td>
+              <td>Standalone Installer (.exe)</td>
+              <td><span class="meta-tag highlight">Supported (v0.1.0)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Physical Android Devices</strong></td>
+              <td>Android 7.0 (Nougat / API 24) to Android 15</td>
+              <td>USB 3.0 Cable, Wi-Fi ADB (5GHz / 2.4GHz)</td>
+              <td><span class="meta-tag highlight">Supported (All brands)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Official Android Studio Emulators</strong></td>
+              <td>Android Virtual Devices (AVD - all APIs)</td>
+              <td>Local loopback (`emulator-5554`)</td>
+              <td><span class="meta-tag highlight">Supported (Auto-detected)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Third-Party Emulators</strong></td>
+              <td>Genymotion, BlueStacks 5, LDPlayer</td>
+              <td>ADB over localhost port</td>
+              <td><span class="meta-tag highlight">Supported</span></td>
+            </tr>
+            <tr>
+              <td><strong>macOS &amp; Linux</strong></td>
+              <td>macOS 12+ / Ubuntu 20.04+, Fedora 36+</td>
+              <td>DMG &amp; AppImage / .deb</td>
+              <td><span class="meta-tag">Planned for v0.2.0</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
       <!-- Verification Section -->
       <div class="verify-card">
-        <h3>Verify Installer Integrity (SHA-256)</h3>
-        <p>You can verify your downloaded installer in Windows PowerShell using the command below:</p>
+        <h3>🔒 Verify Installer Integrity (SHA-256)</h3>
+        <p>
+          We provide cryptographic SHA-256 integrity checksums for every published build so you can verify that the downloaded installer has not been altered or corrupted.
+        </p>
+        
+        <p style="margin-bottom: 6px;"><strong>Official v0.1.0 Installer Checksum:</strong></p>
+        <pre class="code-box"><code>9a0ba1e61769aef10e53f2b1c61654897c1a8470c589eae2c7ebd76be35b2c17</code></pre>
+
+        <p style="margin-top: 14px; margin-bottom: 6px;"><strong>Verify in Windows PowerShell:</strong></p>
         <pre class="code-box"><code>Get-FileHash -Algorithm SHA256 "PromptTest Studio_0.1.0_x64-setup.exe"</code></pre>
-        <p style="margin-top: 12px; margin-bottom: 0;">
-          Compare the output hash against the official hash in our <a href="changelog.html">Changelog page</a> or on <a href="https://github.com/shriramsingh/prompttest-studio-site/releases" target="_blank" rel="noreferrer">GitHub Releases ↗</a>.
+
+        <p style="margin-top: 14px; margin-bottom: 6px;"><strong>Verify in Command Prompt (cmd.exe):</strong></p>
+        <pre class="code-box"><code>certutil -hashfile "PromptTest Studio_0.1.0_x64-setup.exe" SHA256</code></pre>
+
+        <p style="margin-top: 14px; margin-bottom: 0;">
+          Download the raw <a href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.1.0/SHA256SUMS.txt" target="_blank" rel="noreferrer">SHA256SUMS.txt ↗</a> or inspect the <a href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.1.0/release-manifest.json" target="_blank" rel="noreferrer">release-manifest.json ↗</a> for automated build provenance.
         </p>
       </div>
+
+      <!-- FAQ Accordion -->
+      <section class="section" style="padding-top: 40px; padding-bottom: 20px;">
+        <div class="section-head" style="margin-bottom: 30px; text-align: left; max-width: none;">
+          <span class="eyebrow">Download FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Do I need administrator permissions to install PromptTest Studio?</summary>
+            <div class="faq-content">
+              No. PromptTest Studio is configured as a per-user installation (installed into your <code>%LOCALAPPDATA%</code> folder). It requires no administrative rights or UAC elevation, making it ideal for corporate or enterprise developer laptops.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does the installer include Android Debug Bridge (ADB)?</summary>
+            <div class="faq-content">
+              Yes! The Windows installer comes bundled with the official Android platform-tools ADB binary. If you already have the Android SDK installed on your system PATH, Studio detects and uses it seamlessly.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can PromptTest Studio be used in air-gapped or offline environments?</summary>
+            <div class="faq-content">
+              Yes. PromptTest Studio operates completely local-first. Once installed, it does not require an active internet connection to mirror devices, author tests, or execute suites over USB or offline local Wi-Fi.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Where can I see previous versions or release notes?</summary>
+            <div class="faq-content">
+              You can read detailed notes on enhancements, bug fixes, and verified artifact hashes on our <a href="changelog.html">Changelog page</a> or directly on <a href="https://github.com/shriramsingh/prompttest-studio-site/releases" target="_blank" rel="noreferrer">GitHub Releases ↗</a>.
+            </div>
+          </details>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
