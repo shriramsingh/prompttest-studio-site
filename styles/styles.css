@@ -20,8 +20,8 @@
   --accent-glow: rgba(16, 185, 129, 0.22);
   --accent-cyan: #38bdf8;
   
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -1167,7 +1167,29 @@ footer {
   }
 }
 
-@media (max-width: 860px) {
+.bento-icon svg, .mockup-sidebar-icon svg, .card-icon svg {
+  display: block;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.bento-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mockup-sidebar-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.card-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 1024px) {
   .nav-links {
     display: none;
     position: absolute;

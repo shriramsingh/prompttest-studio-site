@@ -7,7 +7,7 @@
     <meta property="og:title" content="Community & Support | PromptTest Studio" />
     <title>Community & Support | PromptTest Studio</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles.css?v=2.1" />
   </head>
   <body>
     <!-- Navigation Header -->
@@ -50,19 +50,25 @@
 
       <div class="contact-grid">
         <a href="https://github.com/shriramsingh/prompttest-community/issues/new" target="_blank" rel="noreferrer" class="contact-card">
-          <div class="card-icon">🐛</div>
+          <div class="card-icon" style="color: var(--accent-light);">
+            <svg viewBox="0 0 24 24"><rect x="8" y="6" width="8" height="14" rx="4"/><path d="M19 7l-3 2"/><path d="M5 7l3 2"/><path d="M19 19l-3-2"/><path d="M5 19l3-2"/><path d="M20 13h-4"/><path d="M4 13h4"/><path d="M10 4l1 2"/><path d="M14 4l-1 2"/></svg>
+          </div>
           <h3>Bug Reports <span>↗</span></h3>
           <p>Encountered an issue with device mirroring, element detection, or installation? Open an issue on GitHub with reproduction steps.</p>
         </a>
 
         <a href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer" class="contact-card">
-          <div class="card-icon">💬</div>
+          <div class="card-icon" style="color: var(--accent-cyan);">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
           <h3>Community Discussions <span>↗</span></h3>
           <p>Join other testers and developers to share test workflows, ask implementation questions, and exchange best practices.</p>
         </a>
 
         <a href="https://github.com/shriramsingh/prompttest-community/issues/new" target="_blank" rel="noreferrer" class="contact-card">
-          <div class="card-icon">🚀</div>
+          <div class="card-icon" style="color: #f59e0b;">
+            <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          </div>
           <h3>Feature Requests <span>↗</span></h3>
           <p>Have an idea for a new plain-English command or an enhancement to the visual inspector? Submit a feature suggestion.</p>
         </a>
@@ -139,7 +145,8 @@
       </div>
     </footer>
 
-    <script src="scripts/nav.js"></script>
-    <script src="scripts/releases.js"></script>
+    <!-- Scripts with Cache-Busting -->
+    <script src="scripts/nav.js?v=2.1"></script>
+    <script src="scripts/releases.js?v=2.1"></script>
   </body>
 </html>

@@ -7,7 +7,7 @@
     <meta property="og:title" content="Downloads | PromptTest Studio" />
     <title>Downloads | PromptTest Studio</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles.css?v=2.1" />
   </head>
   <body>
     <!-- Navigation Header -->
@@ -68,10 +68,12 @@
         </div>
       </div>
 
-      <!-- System Requirements & Verification -->
+      <!-- System Requirements & Verification with SVG Icons -->
       <div class="bento-grid" style="margin-top: 30px;">
         <div class="bento-card">
-          <div class="bento-icon">💻</div>
+          <div class="bento-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
           <h3>System Requirements</h3>
           <p>
             • Operating System: Windows 10 (1809+) or Windows 11 64-bit<br />
@@ -82,7 +84,9 @@
         </div>
 
         <div class="bento-card">
-          <div class="bento-icon">📱</div>
+          <div class="bento-icon">
+            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/></svg>
+          </div>
           <h3>Device Compatibility</h3>
           <p>
             • Any physical Android phone or tablet running Android 7.0+<br />
@@ -93,7 +97,9 @@
         </div>
 
         <div class="bento-card">
-          <div class="bento-icon">🛡️</div>
+          <div class="bento-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
           <h3>Release Notes &amp; Integrity</h3>
           <p>
             Every build publishes an SHA-256 integrity checksum and detailed release notes. View recent enhancements, changes, and historical versions on our changelog.
@@ -156,7 +162,8 @@
       </div>
     </footer>
 
-    <script src="scripts/nav.js"></script>
-    <script src="scripts/releases.js"></script>
+    <!-- Scripts with Cache-Busting -->
+    <script src="scripts/nav.js?v=2.1"></script>
+    <script src="scripts/releases.js?v=2.1"></script>
   </body>
 </html>
