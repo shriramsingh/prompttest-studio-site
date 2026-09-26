@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="PromptTest Studio documentation: Plain-English test syntax, element inspection, and device setup." />
+    <meta name="description" content="Official PromptTest Studio Documentation: Complete user guide, plain-English spec reference, device setup, and visual testing." />
     <meta property="og:title" content="Documentation | PromptTest Studio" />
-    <title>Documentation | PromptTest Studio</title>
+    <meta property="og:description" content="Learn how to inspect devices, author tests in plain English, and run automated QA with PromptTest Studio." />
+    <title>Documentation &amp; User Guide | PromptTest Studio</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles/styles.css?v=2.2" />
   </head>
   <body>
-    <!-- Navigation Header -->
+    <!-- Top Navigation Header -->
     <header class="header-wrap">
       <div class="shell nav">
         <a class="brand" href="index.html">
@@ -32,7 +33,7 @@
             <span>↓</span>
           </a>
           <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
           </button>
@@ -40,154 +41,607 @@
       </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Docs Layout Container -->
     <main class="shell page-container">
-      <div class="page-header">
-        <span class="eyebrow">User Guide &amp; Reference</span>
+      <div class="page-header" style="margin-bottom: 30px;">
+        <span class="eyebrow">User Guide &amp; Technical Reference</span>
         <h1>PromptTest Studio <span class="gradient-text">Documentation</span></h1>
-        <p class="lede">Comprehensive guide to authoring plain-English tests, inspecting Android UI elements, running test suites, and managing visual baselines.</p>
+        <p class="lede">The complete reference for authoring plain-English mobile tests, inspecting native Android elements, and running visual regression suites.</p>
       </div>
 
-      <div class="doc-shell">
-        <h2>1. Overview &amp; Architecture</h2>
-        <p>
-          <strong>PromptTest Studio</strong> is a visual desktop application built for Android QA teams, developers, and product managers. 
-          It bridges physical Android hardware with an intuitive test execution engine via ADB (Android Debug Bridge).
-        </p>
-        <p>Key pillars of the Studio architecture:</p>
-        <ul>
-          <li><strong>Direct Canvas Mirror:</strong> Real-time screen capture and input injection without modifying your Android APK.</li>
-          <li><strong>Zero-Instrumented Inspector:</strong> Reads native accessibility hierarchies directly via ADB, allowing inspection of third-party apps, system apps, and webviews.</li>
-          <li><strong>Plain-English Execution Engine:</strong> Translates natural language instructions into precise UI interactions with automatic fuzzy element resolution.</li>
-        </ul>
+      <!-- Mobile Jump Menu -->
+      <div class="docs-mobile-toc">
+        <details class="faq-item">
+          <summary>📑 Jump to Documentation Chapter</summary>
+          <div class="faq-content" style="padding-top: 12px;">
+            <ul style="margin: 0; padding-left: 20px; line-height: 2;">
+              <li><a href="#overview">1. Introduction &amp; Architecture</a></li>
+              <li><a href="#installation">2. Installation &amp; SmartScreen</a></li>
+              <li><a href="#device-setup">3. Device Setup (USB &amp; Wi-Fi)</a></li>
+              <li><a href="#workspace-tour">4. Studio Workspace Tour</a></li>
+              <li><a href="#spec-language">5. Plain-English Spec Language</a></li>
+              <li><a href="#visual-testing">6. Visual Baselines &amp; Masks</a></li>
+              <li><a href="#execution-evidence">7. Test Suites &amp; Evidence</a></li>
+              <li><a href="#troubleshooting">8. Troubleshooting &amp; Diagnostics</a></li>
+            </ul>
+          </div>
+        </details>
+      </div>
 
-        <h2>2. Plain-English Spec Language Reference</h2>
-        <p>PromptTest specs are stored as clean plain-text files. The engine interprets natural verbs and element names without complex code:</p>
+      <div class="docs-layout">
+        <!-- Sticky Sidebar Navigation -->
+        <aside class="docs-sidebar">
+          <div class="docs-sidebar-group">
+            <div class="docs-sidebar-title">Getting Started</div>
+            <ul class="docs-sidebar-links">
+              <li><a href="#overview" class="active">Overview &amp; Architecture</a></li>
+              <li><a href="#requirements">System Requirements</a></li>
+              <li><a href="#installation">Windows Installation</a></li>
+              <li><a href="#device-setup">Connecting Devices (USB)</a></li>
+              <li><a href="#wifi-setup">Untethered Wi-Fi Setup</a></li>
+              <li><a href="#emulators">Emulators (AVD)</a></li>
+            </ul>
+          </div>
 
-        <h3>Application Control</h3>
-        <pre class="code-box"><code># Launch an app by package name or display label
-Launch "com.example.shopping"
+          <div class="docs-sidebar-group">
+            <div class="docs-sidebar-title">Workspace Tour</div>
+            <ul class="docs-sidebar-links">
+              <li><a href="#canvas">Live Device Canvas</a></li>
+              <li><a href="#nav-bar">Virtual Nav Bar</a></li>
+              <li><a href="#inspector">Visual Element Inspector</a></li>
+              <li><a href="#device-manager">Device Manager &amp; Wake</a></li>
+            </ul>
+          </div>
 
-# Close or restart the active application
-Terminate "com.example.shopping"
-Restart "com.example.shopping"</code></pre>
+          <div class="docs-sidebar-group">
+            <div class="docs-sidebar-title">Spec Language Reference</div>
+            <ul class="docs-sidebar-links">
+              <li><a href="#spec-syntax">Syntax Philosophy</a></li>
+              <li><a href="#commands-app">Application Commands</a></li>
+              <li><a href="#commands-touch">Touch &amp; Clicks</a></li>
+              <li><a href="#commands-input">Text &amp; Key Input</a></li>
+              <li><a href="#commands-gestures">Scrolling &amp; Navigation</a></li>
+              <li><a href="#commands-assertions">Assertions &amp; Checks</a></li>
+              <li><a href="#sample-specs">Complete Flow Examples</a></li>
+            </ul>
+          </div>
 
-        <h3>Touch &amp; Interaction Commands</h3>
-        <pre class="code-box"><code># Tap on an element by visible text, content description, or resource ID
+          <div class="docs-sidebar-group">
+            <div class="docs-sidebar-title">Visual Testing</div>
+            <ul class="docs-sidebar-links">
+              <li><a href="#visual-testing">How Baselines Work</a></li>
+              <li><a href="#baseline-capture">Capturing References</a></li>
+              <li><a href="#exclude-masks">Dynamic Exclude Masks</a></li>
+              <li><a href="#diff-viewer">Analyzing Diff Overlays</a></li>
+            </ul>
+          </div>
+
+          <div class="docs-sidebar-group">
+            <div class="docs-sidebar-title">Execution &amp; Reports</div>
+            <ul class="docs-sidebar-links">
+              <li><a href="#execution-evidence">Running Suites &amp; SSE</a></li>
+              <li><a href="#test-evidence">Capturing Test Evidence</a></li>
+            </ul>
+          </div>
+
+          <div class="docs-sidebar-group">
+            <div class="docs-sidebar-title">Troubleshooting</div>
+            <ul class="docs-sidebar-links">
+              <li><a href="#troubleshooting">Common Fixes</a></li>
+              <li><a href="#reset-adb">Resetting the ADB Server</a></li>
+              <li><a href="#webviews">WebViews &amp; Hybrid Apps</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Main Documentation Body -->
+        <article class="docs-content">
+          <!-- Chapter 1 -->
+          <section class="docs-section" id="overview">
+            <h2>1. Introduction &amp; Architecture</h2>
+            <p>
+              <strong>PromptTest Studio</strong> is an interactive visual desktop IDE designed for mobile QA engineers, developers, and product teams. It enables teams to write, debug, and automate mobile tests on Android devices using intuitive, human-readable English instructions.
+            </p>
+            <p>Unlike traditional test frameworks that require Appium servers, complex WebDriver drivers, or fragile XPath selectors, PromptTest Studio operates locally via direct Android Debug Bridge (ADB) protocols:</p>
+
+            <div class="docs-callout info">
+              <div class="docs-callout-icon">💡</div>
+              <div>
+                <strong>Zero-Instrumented Architecture:</strong> PromptTest Studio interacts with your Android applications without requiring any SDK modifications, third-party APK wrapping, or code instrumentation. It tests identical binary builds released to end users.
+              </div>
+            </div>
+
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Role</th>
+                  <th>Technology</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Desktop Studio</strong></td>
+                  <td>Interactive UI, Element Inspector, Device Mirror, Test Runner</td>
+                  <td>Lightweight Desktop Shell (Local-First)</td>
+                </tr>
+                <tr>
+                  <td><strong>Device Bridge</strong></td>
+                  <td>Low-latency screen stream and direct touch event injection</td>
+                  <td>Native ADB (USB 3.0 / Wi-Fi 5GHz)</td>
+                </tr>
+                <tr>
+                  <td><strong>Execution Engine</strong></td>
+                  <td>Natural language parser, fuzzy element resolver, and assertions</td>
+                  <td>PromptTest Native Engine</td>
+                </tr>
+                <tr>
+                  <td><strong>Evidence Store</strong></td>
+                  <td>Step-by-step screenshots, visual regression baselines, reports</td>
+                  <td>100% Local File System</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Requirements -->
+          <section class="docs-section" id="requirements">
+            <h2>System Requirements</h2>
+            <p>Before installing PromptTest Studio, ensure your development workstation meets the minimum specifications:</p>
+            <ul>
+              <li><strong>Operating System:</strong> Windows 10 (version 1809 or higher) or Windows 11 (64-bit x86_64).</li>
+              <li><strong>Memory:</strong> 4 GB RAM minimum (8 GB recommended for simultaneous screen mirroring and multi-step suites).</li>
+              <li><strong>Disk Space:</strong> 250 MB free disk space for the Studio application.</li>
+              <li><strong>Android Compatibility:</strong> Any physical smartphone, tablet, or emulator running Android 7.0 (Nougat / API 24) or newer.</li>
+              <li><strong>Connection:</strong> Standard USB data cable or a shared 2.4 GHz / 5 GHz local Wi-Fi network.</li>
+            </ul>
+          </section>
+
+          <!-- Installation & SmartScreen -->
+          <section class="docs-section" id="installation">
+            <h2>Windows Installation &amp; SmartScreen Guide</h2>
+            <p>PromptTest Studio is distributed as a lightweight Windows NSIS installer that installs to your local user directory without requiring administrative rights.</p>
+            
+            <ol>
+              <li>Download the latest installer from the <a href="downloads.html">Downloads page</a> (e.g. <code>PromptTest Studio_0.1.0_x64-setup.exe</code>).</li>
+              <li>Double-click the downloaded <code>.exe</code> file to launch the setup wizard.</li>
+            </ol>
+
+            <div class="smartscreen-notice">
+              <div class="smartscreen-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; min-width: 24px; max-width: 24px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="smartscreen-content">
+                <h3>Windows Defender SmartScreen Notice</h3>
+                <p>
+                  Because PromptTest Studio is an independent community software release without an expensive enterprise certificate, Windows Defender SmartScreen may display an initial warning stating <em>"Windows protected your PC"</em>.
+                </p>
+                <div class="smartscreen-steps">
+                  <div><strong>1.</strong> Click the underlined text: <strong>"More info"</strong>.</div>
+                  <div><strong>2.</strong> Click the button in the bottom right corner: <strong>"Run anyway"</strong>.</div>
+                  <div><strong>3.</strong> The installation wizard opens immediately.</div>
+                </div>
+              </div>
+            </div>
+
+            <p>Once installed, launch <strong>PromptTest Studio</strong> from your Start Menu or Desktop shortcut.</p>
+          </section>
+
+          <!-- Connecting Devices (USB) -->
+          <section class="docs-section" id="device-setup">
+            <h2>Connecting an Android Device over USB</h2>
+            <p>Follow these quick steps to prepare any physical Android device for automated testing:</p>
+
+            <div class="guide-step-list">
+              <div class="guide-step-item">
+                <div class="step-badge">1</div>
+                <div class="step-details">
+                  <h4>Enable Developer Options</h4>
+                  <p>On your Android phone, go to <strong>Settings</strong> &gt; <strong>About phone</strong>. Tap the <strong>Build number</strong> 7 times until you see the confirmation: <em>"You are now a developer!"</em>.</p>
+                </div>
+              </div>
+
+              <div class="guide-step-item">
+                <div class="step-badge">2</div>
+                <div class="step-details">
+                  <h4>Enable USB Debugging</h4>
+                  <p>Navigate to <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Developer options</strong>. Turn on the <strong>USB debugging</strong> toggle.</p>
+                </div>
+              </div>
+
+              <div class="guide-step-item">
+                <div class="step-badge">3</div>
+                <div class="step-details">
+                  <h4>Authorize Your Computer</h4>
+                  <p>Plug your phone into your Windows PC using a USB data cable. Unlock your phone screen. When the dialog appears asking <em>"Allow USB debugging from this computer?"</em>, check <strong>Always allow from this computer</strong> and tap <strong>Allow</strong>.</p>
+                </div>
+              </div>
+            </div>
+
+            <p>To verify the connection in your terminal, run:</p>
+            <pre class="code-box"><code>adb devices</code></pre>
+            <p>You should see your device serial number with status <code>device</code>:</p>
+            <pre class="code-box"><code>List of devices attached
+35211FDH200194    device</code></pre>
+          </section>
+
+          <!-- Wi-Fi Setup -->
+          <section class="docs-section" id="wifi-setup">
+            <h2>Untethered Wi-Fi Testing (Wireless ADB)</h2>
+            <p>PromptTest Studio allows you to test devices without any physical USB cables attached, running tests over your local Wi-Fi.</p>
+
+            <h3>Option A: Android 11, 12, 13, and 14+ (Modern Pairing Code)</h3>
+            <ol>
+              <li>Ensure your PC and phone are connected to the <strong>same Wi-Fi network</strong>.</li>
+              <li>Go to <strong>Settings</strong> &gt; <strong>Developer options</strong> &gt; <strong>Wireless debugging</strong> and toggle it ON.</li>
+              <li>Tap directly on <em>Wireless debugging</em> to open its configuration screen.</li>
+              <li>Tap <strong>"Pair device with pairing code"</strong>. Note the <strong>6-digit Wi-Fi pairing code</strong>, <strong>IP address</strong>, and <strong>Port</strong> (e.g., <code>192.168.1.150:42135</code>).</li>
+              <li>In PromptTest Studio, open the Device dropdown, click <strong>"Connect over Wi-Fi"</strong>, enter the IP, port, and 6-digit code, and click <strong>Connect</strong>.</li>
+            </ol>
+
+            <h3>Option B: Android 10 and Older (USB-Assisted Wi-Fi)</h3>
+            <ol>
+              <li>Connect your phone to your PC via USB cable once.</li>
+              <li>Open PowerShell and run: <code style="color: var(--accent-light);">adb tcpip 5555</code></li>
+              <li>Disconnect the USB cable.</li>
+              <li>Find your device's IP under <strong>Settings &gt; About Phone &gt; Status &gt; IP Address</strong>.</li>
+              <li>In PromptTest Studio, enter the IP address with port <code>5555</code> and click <strong>Connect</strong>.</li>
+            </ol>
+          </section>
+
+          <!-- Emulators -->
+          <section class="docs-section" id="emulators">
+            <h2>Using Android Emulators (AVD)</h2>
+            <p>PromptTest Studio connects to Android Virtual Devices (AVD) launched through Android Studio or third-party emulators with zero extra configuration:</p>
+            <ul>
+              <li>Launch any Android Studio emulator from the AVD Manager.</li>
+              <li>Studio automatically detects the running emulator (e.g. <code>emulator-5554</code>).</li>
+              <li>Select the emulator from the Studio device selector to begin mirroring and testing.</li>
+            </ul>
+          </section>
+
+          <!-- Chapter 2: Workspace Tour -->
+          <section class="docs-section" id="workspace-tour">
+            <h2>2. Studio Workspace Tour</h2>
+            <p>The PromptTest Studio interface is organized into 4 integrated panels to keep test authoring and device observation in one view:</p>
+
+            <h3 id="canvas">Live Device Canvas</h3>
+            <p>The central panel mirrors your Android device screen at 60 FPS with low latency. You can interact with the app just like holding the physical phone:</p>
+            <ul>
+              <li><strong>Left-Click:</strong> Sends a native tap event at the clicked pixel coordinates.</li>
+              <li><strong>Click &amp; Drag:</strong> Performs smooth touch scrolling and directional swiping.</li>
+              <li><strong>Keyboard:</strong> Direct keyboard input sends native Android key events.</li>
+            </ul>
+
+            <h3 id="nav-bar">Virtual Hardware Navigation Bar</h3>
+            <p>Directly below the mirrored device screen is the virtual navigation bar:</p>
+            <ul>
+              <li><strong>Back (◁):</strong> Triggers Android hardware Back button (<code>KeyEvent.KEYCODE_BACK</code>).</li>
+              <li><strong>Home (○):</strong> Navigates to the Android home launcher screen.</li>
+              <li><strong>Recents (□):</strong> Opens the multitasking app switcher.</li>
+              <li><strong>Screen Wake / Unlock:</strong> Wakes the device display and bypasses the keyguard.</li>
+            </ul>
+
+            <h3 id="inspector">Visual Element Inspector</h3>
+            <p>When you hover over elements in the device canvas, the inspector highlights the element boundary box and displays critical attributes:</p>
+            <ul>
+              <li><strong>Visible Text:</strong> The displayed label used for plain-English matching (e.g., <code>"Sign In"</code>).</li>
+              <li><strong>Content Description:</strong> Accessibility label for icon buttons (e.g., <code>"Search"</code> or <code>"Cart"</code>).</li>
+              <li><strong>Resource ID:</strong> The developer's assigned identifier (e.g. <code>id/btn_login</code>).</li>
+              <li><strong>Element Bounds:</strong> Exact screen coordinates `[x1, y1][x2, y2]`.</li>
+              <li><strong>State Attributes:</strong> `clickable: true`, `editable: false`, `focusable: true`.</li>
+            </ul>
+
+            <h3 id="device-manager">Device Manager &amp; Quick Switch</h3>
+            <p>The top toolbar displays the currently active device. If multiple devices are plugged in (e.g., a physical Pixel 7 and a Samsung Galaxy tablet), click the dropdown to switch active context in 1 click.</p>
+          </section>
+
+          <!-- Chapter 3: Plain-English Spec Language Reference -->
+          <section class="docs-section" id="spec-language">
+            <h2>3. Plain-English Spec Language Reference</h2>
+            <p id="spec-syntax">PromptTest test specifications are written in natural English verbs. Each line represents an atomic user action or verification.</p>
+
+            <h3 id="commands-app">Application Lifecycle</h3>
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Launch "&lt;package&gt;"</code></td>
+                  <td>Starts the application by package name or app name.</td>
+                  <td><code>Launch "com.example.store"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Terminate "&lt;package&gt;"</code></td>
+                  <td>Force stops the specified application.</td>
+                  <td><code>Terminate "com.example.store"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Restart "&lt;package&gt;"</code></td>
+                  <td>Terminates and cleanly restarts the app.</td>
+                  <td><code>Restart "com.example.store"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Clear cache "&lt;package&gt;"</code></td>
+                  <td>Clears application storage and cached data.</td>
+                  <td><code>Clear cache "com.example.store"</code></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="commands-touch">Touch &amp; Click Actions</h3>
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Tap "&lt;target&gt;"</code></td>
+                  <td>Taps an element matching text, content description, or ID.</td>
+                  <td><code>Tap "Sign In"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Tap (x, y)</code></td>
+                  <td>Taps exact screen pixel coordinates.</td>
+                  <td><code>Tap (540, 1120)</code></td>
+                </tr>
+                <tr>
+                  <td><code>Double tap "&lt;target&gt;"</code></td>
+                  <td>Performs a quick double tap gesture.</td>
+                  <td><code>Double tap "Product Image"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Long press "&lt;target&gt;"</code></td>
+                  <td>Presses and holds an element for 1.5 seconds.</td>
+                  <td><code>Long press "Item 3"</code></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="commands-input">Text &amp; Keyboard Input</h3>
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Type "&lt;text&gt;" into "&lt;target&gt;"</code></td>
+                  <td>Focuses the input field and types characters.</td>
+                  <td><code>Type "alex@test.com" into "Email"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Clear "&lt;target&gt;"</code></td>
+                  <td>Clears existing text from an editable input field.</td>
+                  <td><code>Clear "Search Bar"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Press Enter</code></td>
+                  <td>Sends an Enter/Submit action on the soft keyboard.</td>
+                  <td><code>Press Enter</code></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="commands-gestures">Scrolling &amp; Navigation</h3>
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Scroll down</code> / <code>Scroll up</code></td>
+                  <td>Performs a vertical swipe scroll gesture.</td>
+                  <td><code>Scroll down</code></td>
+                </tr>
+                <tr>
+                  <td><code>Scroll to "&lt;target&gt;"</code></td>
+                  <td>Repeats scrolling until the element appears on screen.</td>
+                  <td><code>Scroll to "Checkout Button"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Swipe left</code> / <code>Swipe right</code></td>
+                  <td>Performs horizontal swiping (e.g. image carousel).</td>
+                  <td><code>Swipe left</code></td>
+                </tr>
+                <tr>
+                  <td><code>Press Back</code></td>
+                  <td>Triggers Android hardware Back button.</td>
+                  <td><code>Press Back</code></td>
+                </tr>
+                <tr>
+                  <td><code>Wait &lt;N&gt; seconds</code></td>
+                  <td>Explicit pause before executing the next instruction.</td>
+                  <td><code>Wait 2 seconds</code></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="commands-assertions">Assertions &amp; Verifications</h3>
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Assert "&lt;target&gt;" is visible</code></td>
+                  <td>Verifies element is rendered on screen.</td>
+                  <td><code>Assert "Welcome Dashboard" is visible</code></td>
+                </tr>
+                <tr>
+                  <td><code>Assert "&lt;target&gt;" is not visible</code></td>
+                  <td>Verifies element is absent or hidden.</td>
+                  <td><code>Assert "Loading Spinner" is not visible</code></td>
+                </tr>
+                <tr>
+                  <td><code>Assert "&lt;target&gt;" contains "&lt;text&gt;"</code></td>
+                  <td>Verifies text contents of a target element.</td>
+                  <td><code>Assert "Total Price" contains "$49.99"</code></td>
+                </tr>
+                <tr>
+                  <td><code>Assert "&lt;target&gt;" is checked</code></td>
+                  <td>Verifies checkbox or toggle switch state.</td>
+                  <td><code>Assert "Remember Password" is checked</code></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="sample-specs">Complete Sample Test Specs</h3>
+            <h4>User Login &amp; Onboarding Test</h4>
+            <pre class="code-box"><code># 1. Start application
+Launch "com.acme.shop"
+
+# 2. Enter credentials
+Tap "Sign in with Email"
+Type "qa_engineer@acme.com" into "Email address"
+Type "secure_pass_2026" into "Password"
 Tap "Sign In"
-Tap "btn_checkout"
 
-# Long press on an element
-Long press "Profile Avatar"
+# 3. Assert successful login
+Assert "Welcome back, QA Engineer" is visible
+Assert "Your Cart (0)" is visible</code></pre>
 
-# Type text into an input field
-Type "alex@company.com" into "Email address"
-Type "secure_pass_123" into "Password field"
+            <h4>Search, Add to Cart &amp; Checkout Flow</h4>
+            <pre class="code-box"><code># Search for item
+Tap "Search Products"
+Type "Noise Cancelling Headphones" into "Search"
+Press Enter
 
-# Clear an input field
-Clear "Search bar"</code></pre>
+# Verify listing and tap first item
+Assert "Sony WH-1000XM5" is visible
+Tap "Sony WH-1000XM5"
 
-        <h3>Assertions &amp; Verifications</h3>
-        <pre class="code-box"><code># Assert element presence
-Assert "Welcome back, Alex" is visible
-Assert "Order Placed Successfully" is visible
-
-# Assert negative state
-Assert "Error message" is not visible
-
-# Assert checkbox or toggle states
-Assert "Remember me" is checked</code></pre>
-
-        <h3>Navigation &amp; Gestures</h3>
-        <pre class="code-box"><code># Scroll screen vertically or horizontally
+# Add to cart and proceed
 Scroll down
-Scroll up
-Swipe left
+Tap "Add to Cart"
+Assert "Item added to cart" is visible
+Tap "View Cart"
+Assert "Total: $349.99" is visible
+Tap "Proceed to Checkout"</code></pre>
+          </section>
 
-# Hardware navigation buttons
-Press Back
-Press Home
-Press Recents
+          <!-- Chapter 4: Visual Regression & Baselines -->
+          <section class="docs-section" id="visual-testing">
+            <h2>4. Visual Regression &amp; Baseline Testing</h2>
+            <p>
+              Mobile applications frequently experience subtle visual regressions: broken layouts, text clipping, missing icons, or overlapping elements that pass traditional functional assertions. PromptTest Studio includes a built-in visual pixel comparison engine.
+            </p>
 
-# Explicit timing waits (if needed)
-Wait 2 seconds</code></pre>
+            <h3 id="baseline-capture">How to Capture an Approved Reference Baseline</h3>
+            <ol>
+              <li>In your test spec, add a visual baseline check:
+                <pre class="code-box"><code>Assert visual baseline "Product_Details_Screen"</code></pre>
+              </li>
+              <li>Run the test. On the first run, Studio captures the full screen and saves it as the <strong>Approved Reference Baseline</strong>.</li>
+              <li>On all subsequent runs, Studio captures the new screen at identical resolution and compares pixels against the approved reference.</li>
+            </ol>
 
-        <h2>3. Visual Element Inspector</h2>
-        <p>
-          When you hover over the live phone canvas in Studio, the <strong>Element Inspector</strong> overlays a boundary box around the target control.
-          Clicking an element reveals:
-        </p>
-        <ul>
-          <li><strong>Display Text &amp; Content Description:</strong> The human-readable string used for plain-English steps.</li>
-          <li><strong>Resource ID:</strong> Native Android identifier (e.g. <code>com.example:id/login_button</code>).</li>
-          <li><strong>Coordinates &amp; Dimensions:</strong> Precise screen bounds (x, y, width, height).</li>
-          <li><strong>Interaction Flags:</strong> Whether the element is <code>clickable</code>, <code>focusable</code>, <code>scrollable</code>, or <code>editable</code>.</li>
-        </ul>
+            <h3 id="exclude-masks">Dynamic Exclude Masks</h3>
+            <p>
+              Screens often contain fluctuating elements (the digital status bar clock, Wi-Fi signal icon, battery percentage, or dynamic ads) that would trigger false positive differences.
+            </p>
+            <div class="docs-callout tip">
+              <div class="docs-callout-icon">🎯</div>
+              <div>
+                <strong>Drawing Exclude Masks:</strong> In the Studio Visual Baselines tab, simply click and drag bounding boxes over fluctuating areas (like the top status bar or profile avatar). Studio automatically excludes masked regions from comparison calculations.
+              </div>
+            </div>
 
-        <h2>4. Visual Baseline Comparisons</h2>
-        <p>
-          PromptTest Studio includes visual regression detection. When a visual baseline step is added, Studio captures a pristine screenshot of the screen.
-          On subsequent test runs:
-        </p>
-        <ul>
-          <li>The screen is captured at identical resolution.</li>
-          <li>Studio compares the current screen against the reference baseline pixel-by-pixel.</li>
-          <li><strong>Masks:</strong> You can drag bounding boxes over fluctuating areas (like digital clocks, Wi-Fi signal meters, and dynamic banners) to exclude them from comparison.</li>
-        </ul>
+            <h3 id="diff-viewer">Reviewing Baseline Deviations</h3>
+            <p>When a visual difference exceeds the sensitivity threshold (default: 0.1% pixel change):</p>
+            <ul>
+              <li>The test step fails with a visual deviation warning.</li>
+              <li>Studio presents a <strong>Side-by-Side Diff Viewer</strong> highlighting changed pixels in neon red.</li>
+              <li>You can either click <strong>"Accept New Baseline"</strong> if the change was an intended redesign, or flag it as a visual regression bug for your development team.</li>
+            </ul>
+          </section>
 
-        <h2>5. Untethered Testing over Wi-Fi (Wireless ADB)</h2>
-        <p>
-          PromptTest Studio supports full untethered device testing over your local 2.4 GHz or 5 GHz Wi-Fi network. 
-          Both physical device controls and live streaming operate without an attached USB cable.
-        </p>
+          <!-- Chapter 5: Execution & Evidence -->
+          <section class="docs-section" id="execution-evidence">
+            <h2>5. Test Suites, Execution &amp; Evidence</h2>
+            
+            <h3>Step-by-Step vs Full Suite Execution</h3>
+            <ul>
+              <li><strong>Step-by-Step Debugging:</strong> Click the "Run Step" icon next to any individual instruction in Studio to test it in isolation without running the whole file.</li>
+              <li><strong>Full Suite Runs:</strong> Click <strong>"Run Suite"</strong> in the top header. Studio executes the entire test specification sequentially from top to bottom.</li>
+            </ul>
 
-        <h3>Device-Side Setup</h3>
-        <ul>
-          <li><strong>Android 11, 12, 13, and 14+:</strong> Connect phone and PC to the same Wi-Fi. Go to <em>Settings &gt; Developer options &gt; Wireless debugging</em> and toggle on. Tap <em>Pair device with pairing code</em> to reveal your 6-digit PIN, IP address, and port.</li>
-          <li><strong>Android 10 and Older:</strong> Connect via USB cable once and execute <code>adb tcpip 5555</code>. Then disconnect the USB cable and locate your device's IP under <em>Settings &gt; About phone &gt; Status</em>.</li>
-        </ul>
+            <h3 id="test-evidence">Live SSE Telemetry &amp; Evidence Generation</h3>
+            <p>
+              During execution, Studio opens a Server-Sent Events (SSE) telemetry connection directly to the test engine. Every action displays its exact duration in milliseconds, pass/fail status, and diagnostic logs.
+            </p>
+            <p>Upon completion, Studio automatically compiles an evidence package containing:</p>
+            <ul>
+              <li><strong>Full Execution Log:</strong> Timestamps, ADB commands dispatched, and element resolution time.</li>
+              <li><strong>Failure Snapshots:</strong> High-resolution screenshot captured at the exact moment of failure.</li>
+              <li><strong>Interactive HTML Report:</strong> Self-contained report file ready to attach to GitHub Issues or Jira tickets.</li>
+            </ul>
+          </section>
 
-        <h3>Studio-Side Connection</h3>
-        <ul>
-          <li>In the Studio top toolbar, click the <strong>Device Selector</strong> dropdown and choose <strong>"Connect Device over Wi-Fi"</strong>.</li>
-          <li>Enter the IP address, port, and 6-digit pairing code shown on your Android device.</li>
-          <li>Click <strong>Connect</strong>. The Studio device badge turns green and live mirroring activates instantly.</li>
-        </ul>
+          <!-- Chapter 6: Troubleshooting & FAQ -->
+          <section class="docs-section" id="troubleshooting">
+            <h2>6. Troubleshooting &amp; Common Diagnostics</h2>
 
-        <h2>6. Troubleshooting &amp; Installation FAQ</h2>
-        <h3>Windows SmartScreen: "Windows protected your PC"</h3>
-        <p>
-          Because PromptTest Studio is an independent community application, Windows Defender SmartScreen may display an initial warning on first launch.
-          To proceed: click <strong>"More info"</strong>, then click <strong>"Run anyway"</strong>. The installer is 100% safe, verified, and local-first.
-        </p>
+            <h3 id="fix-unauthorized">Device Status Shows "Unauthorized"</h3>
+            <p>
+              This means your phone has not yet accepted your computer's RSA security key:
+            </p>
+            <ul>
+              <li>Unplug and reconnect the USB cable.</li>
+              <li>Unlock your phone screen and look for the popup: <em>"Allow USB debugging?"</em>.</li>
+              <li>Check <strong>"Always allow from this computer"</strong> and tap <strong>Allow</strong>.</li>
+            </ul>
 
-        <h3>Device shows "Unauthorized" in Studio</h3>
-        <p>
-          Unlock your Android phone, look for the dialog titled <em>"Allow USB debugging?"</em>, check the box <em>"Always allow from this computer"</em>, and tap <strong>Allow</strong>.
-        </p>
+            <h3 id="reset-adb">Resetting the ADB Server Daemon</h3>
+            <p>
+              If another program (like Android Studio or an emulator) locked the ADB communication port, restart the ADB daemon using PowerShell:
+            </p>
+            <pre class="code-box"><code>adb kill-server
+adb start-server</code></pre>
+            <p>Then refresh PromptTest Studio and your devices will reconnect.</p>
 
-        <h3>Studio does not detect the device</h3>
-        <ul>
-          <li>Verify your USB cable supports data transfer (some charging cables do not include data lines).</li>
-          <li>Ensure USB Connection Mode on your phone is set to <strong>File Transfer / MTP</strong> rather than "Charge only".</li>
-          <li>Run <code>adb kill-server &amp;&amp; adb start-server</code> in PowerShell to reset the local ADB daemon.</li>
-        </ul>
-      </div>
+            <h3 id="webviews">Testing WebViews &amp; Hybrid Apps (React Native / Flutter)</h3>
+            <p>
+              PromptTest Studio interacts natively with React Native, Flutter, and Android WebViews through standard accessibility nodes. Ensure your custom components expose standard accessibility labels (e.g. <code>accessibilityLabel</code> in React Native or <code>Semantics</code> in Flutter) so the Studio inspector can identify them instantly.
+            </p>
+          </section>
 
-      <!-- Bottom CTA Banner -->
-      <div class="cta-banner" style="margin-top: 50px;">
-        <h2>Ready to try PromptTest Studio?</h2>
-        <p>Download the latest release and run your first test flow in minutes.</p>
-        <div class="cta-actions">
-          <a class="btn btn-primary btn-lg btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
-            <span>Download for Windows (.exe)</span>
-            <span>↓</span>
-          </a>
-          <a class="btn btn-secondary btn-lg" href="getting-started.html">
-            <span>Quick Start Tutorial</span>
-            <span>→</span>
-          </a>
-        </div>
+          <!-- Bottom CTA Banner -->
+          <div class="cta-banner" style="margin-top: 50px;">
+            <h2>Start testing with PromptTest Studio</h2>
+            <p>Download the latest release and run your first plain-English automated test in minutes.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg btn-download-primary" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest">
+                <span>Download for Windows (.exe)</span>
+                <span>↓</span>
+              </a>
+              <a class="btn btn-secondary btn-lg" href="getting-started.html">
+                <span>Getting Started Tutorial</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </main>
 
@@ -234,6 +688,30 @@ Wait 2 seconds</code></pre>
       </div>
     </footer>
 
+    <!-- Active ScrollSpy for Docs Sidebar & Cache-Busted Scripts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('.docs-sidebar-links a');
+        const sections = document.querySelectorAll('.docs-section');
+        
+        window.addEventListener('scroll', () => {
+          let current = '';
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 140;
+            if (window.pageYOffset >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+          
+          links.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+              link.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
     <script src="scripts/nav.js?v=2.2"></script>
     <script src="scripts/releases.js?v=2.2"></script>
   </body>
