@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Frequently asked questions about PromptTest Studio, plain-English mobile QA, device compatibility, and privacy." />
-    <meta property="og:title" content="FAQ | PromptTest Studio" />
-    <title>FAQ | PromptTest Studio</title>
+    <meta name="description" content="Frequently asked questions about PromptTest Studio, PromptTest Mobile, plain-English mobile QA, device compatibility, and Playwright vs Appium comparisons." />
+    <meta name="keywords" content="PromptTest FAQ, mobile testing questions, Playwright for mobile, Appium alternative FAQ, React Native testing, Android QA questions" />
+    <link rel="canonical" href="https://shriramsingh.github.io/prompttest-studio-site/faq.html" />
+    <meta property="og:title" content="FAQ | PromptTest Studio & Mobile QA" />
+    <meta property="og:url" content="https://shriramsingh.github.io/prompttest-studio-site/faq.html" />
+    <title>FAQ | PromptTest Studio &amp; Mobile QA</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles/styles.css?v=2.2" />
   </head>
@@ -108,6 +111,15 @@
           <summary>How do visual baselines and regression checks work?</summary>
           <div class="faq-content">
             When you add a visual check, Studio captures the screen and stores it as an approved baseline image. On future runs, Studio performs a pixel comparison against this reference. You can draw exclude masks over variable areas (such as live clocks or dynamic advertisements) to avoid false positives.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I use Playwright or Cypress for native mobile apps?</summary>
+          <div class="faq-content">
+            No. Tools like Playwright and Cypress are designed specifically for web browsers (desktop and mobile web viewports). They cannot inspect or test native Android APKs or native iOS applications.
+            <br /><br />
+            <strong>PromptTest Mobile</strong> was built specifically to solve native mobile app testing (React Native, Expo, Flutter, and Native Android/iOS). It delivers fast, zero-setup execution, auto-waiting, and autonomous crawling directly on real devices and emulators over ADB.
           </div>
         </details>
 
