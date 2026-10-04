@@ -29,6 +29,20 @@ npm run dev
 
 The studio will be live on `http://localhost:5173`, automatically proxying requests to your local PromptTest engine on port `4040`.
 
+### Licensing (offline)
+
+Studio verifies commercial licenses locally with Ed25519 — no network call, works air-gapped.
+
+```bash
+npm run license:keygen   # one-time keypair: public key committed, private key written to scripts/.license-keys/ (gitignored)
+npm run license:issue -- --customer "Acme Corp" --tier pro --days 365 --out acme.license.json
+npm run license:check    # release gate — fails while the committed key is a placeholder
+```
+
+Paste the issued key into **Settings → License**. The verification *public* key is committed on
+purpose (it is not a secret, so no release build can ship without one); the *private* key must be
+moved offline after generation. Full key-handling and rotation rules: `docs/PUBLISHING.md §9.1`.
+
 ---
 
 ## 📥 Download & Changelog
