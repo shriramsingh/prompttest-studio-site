@@ -49,6 +49,40 @@
         el.href = downloadUrl;
       });
 
+      // Update explicit per-platform download links if present
+      if (exeAsset) {
+        document.querySelectorAll('#download-windows').forEach((el) => {
+          el.href = exeAsset.browser_download_url;
+        });
+        document.querySelectorAll('#size-windows').forEach((el) => {
+          el.textContent = formatBytes(exeAsset.size);
+        });
+      }
+      if (dmgAsset) {
+        document.querySelectorAll('#download-macos').forEach((el) => {
+          el.href = dmgAsset.browser_download_url;
+        });
+        document.querySelectorAll('#size-macos').forEach((el) => {
+          el.textContent = formatBytes(dmgAsset.size);
+        });
+      }
+      if (appImageAsset) {
+        document.querySelectorAll('#download-linux-appimage').forEach((el) => {
+          el.href = appImageAsset.browser_download_url;
+        });
+        document.querySelectorAll('#size-linux-appimage').forEach((el) => {
+          el.textContent = formatBytes(appImageAsset.size);
+        });
+      }
+      if (debAsset) {
+        document.querySelectorAll('#download-linux-deb').forEach((el) => {
+          el.href = debAsset.browser_download_url;
+        });
+        document.querySelectorAll('#size-linux-deb').forEach((el) => {
+          el.textContent = formatBytes(debAsset.size);
+        });
+      }
+
       // Update release tag / badge
       document.querySelectorAll('.release-version-badge, #download-note').forEach((el) => {
         el.textContent = `${release.tag_name || 'Latest'} · ${platformLabel} ${fileSize ? '· ' + fileSize : ''}`;

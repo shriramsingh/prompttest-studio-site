@@ -49,7 +49,7 @@
       <div class="page-header">
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
           <span class="eyebrow" style="margin: 0;">Release Hub</span>
-          <span class="meta-tag highlight">Current Release: v0.1.0</span>
+          <span class="meta-tag highlight">Current Release: v0.2.0</span>
         </div>
         <h1>Download <span class="gradient-text">PromptTest Studio</span></h1>
         <p class="lede">
@@ -75,11 +75,11 @@
           <ul class="platform-specs">
             <li><span>Architecture:</span> <strong>x86_64 (64-bit)</strong></li>
             <li><span>Format:</span> <strong>NSIS Setup (.exe)</strong></li>
-            <li><span>Download Size:</span> <strong>~30.3 MB</strong></li>
+            <li><span>Download Size:</span> <strong id="size-windows">~27.2 MB</strong></li>
             <li><span>Installation:</span> <strong>Per-user (No admin required)</strong></li>
             <li><span>Tools Included:</span> <strong>Bundled Android ADB</strong></li>
           </ul>
-          <a class="btn btn-primary btn-lg" id="download-link" href="https://github.com/shriramsingh/prompttest-studio-site/releases/latest" style="width: 100%; margin-top: auto;">
+          <a class="btn btn-primary btn-lg" id="download-windows" href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.2.0/PromptTest.Studio_0.2.0_x64-setup.exe" style="width: 100%; margin-top: auto;">
             <span>Download for Windows (.exe)</span>
             <span>↓</span>
           </a>
@@ -88,8 +88,8 @@
           </p>
         </div>
 
-        <!-- macOS (Roadmap) -->
-        <div class="platform-card upcoming">
+        <!-- macOS (Active) -->
+        <div class="platform-card active">
           <div class="platform-header">
             <div class="platform-icon">
               <!-- Apple SVG -->
@@ -97,27 +97,28 @@
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.09 1.73-.95 2.76 1.01.08 2.05-.51 2.68-1.26z"/>
               </svg>
             </div>
-            <span class="platform-status-badge roadmap">Planned for v0.2.0</span>
+            <span class="platform-status-badge available">● Available Now</span>
           </div>
           <h3>macOS</h3>
-          <p class="platform-desc">Native macOS application bundle for Apple Silicon and Intel Macs.</p>
+          <p class="platform-desc">Native macOS application bundle for Apple Silicon (M1–M4).</p>
           <ul class="platform-specs">
-            <li><span>Architecture:</span> <strong>Universal (M1–M4 &amp; Intel)</strong></li>
+            <li><span>Architecture:</span> <strong>Apple Silicon (ARM64)</strong></li>
             <li><span>Format:</span> <strong>Disk Image (.dmg)</strong></li>
+            <li><span>Download Size:</span> <strong id="size-macos">~43.6 MB</strong></li>
             <li><span>Min. OS:</span> <strong>macOS 12.0 (Monterey+)</strong></li>
             <li><span>Installation:</span> <strong>Drag to Applications</strong></li>
-            <li><span>Status:</span> <strong>In Build Pipeline</strong></li>
           </ul>
-          <a class="btn btn-secondary btn-lg" href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer" style="width: 100%; margin-top: auto; opacity: 0.85;">
-            <span>Get Notified on Release ↗</span>
+          <a class="btn btn-primary btn-lg" id="download-macos" href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.2.0/PromptTest.Studio_0.2.0_aarch64.dmg" style="width: 100%; margin-top: auto;">
+            <span>Download for macOS (.dmg)</span>
+            <span>↓</span>
           </a>
           <p style="font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 10px; margin-bottom: 0;">
-            Follow GitHub Releases for macOS builds
+            macOS 12+ (Apple Silicon)
           </p>
         </div>
 
-        <!-- Linux (Roadmap) -->
-        <div class="platform-card upcoming">
+        <!-- Linux (Active) -->
+        <div class="platform-card active">
           <div class="platform-header">
             <div class="platform-icon">
               <!-- Linux SVG -->
@@ -125,22 +126,27 @@
                 <path d="M12.016 0C5.38 0 0 5.38 0 12.016c0 6.635 5.38 12.015 12.016 12.015 6.635 0 12.015-5.38 12.015-12.015C24.03 5.38 18.65 0 12.016 0zm0 2.403c5.31 0 9.613 4.303 9.613 9.613 0 5.31-4.303 9.612-9.613 9.612-5.31 0-9.613-4.303-9.613-9.612 0-5.31 4.303-9.613 9.613-9.613z"/>
               </svg>
             </div>
-            <span class="platform-status-badge roadmap">Planned for v0.2.0</span>
+            <span class="platform-status-badge available">● Available Now</span>
           </div>
           <h3>Linux (64-bit)</h3>
           <p class="platform-desc">Universal packages for Ubuntu, Debian, Fedora, Arch, and derivatives.</p>
           <ul class="platform-specs">
-            <li><span>Architecture:</span> <strong>x86_64 &amp; AArch64</strong></li>
+            <li><span>Architecture:</span> <strong>x86_64 (64-bit)</strong></li>
             <li><span>Format:</span> <strong>.AppImage &amp; .deb</strong></li>
+            <li><span>Download Size:</span> <strong id="size-linux-appimage">~117 MB</strong></li>
+            <li><span>Installation:</span> <strong>Standalone Portable / APT</strong></li>
             <li><span>Min. glibc:</span> <strong>glibc 2.31+</strong></li>
-            <li><span>Installation:</span> <strong>Standalone Portable</strong></li>
-            <li><span>Status:</span> <strong>In Build Pipeline</strong></li>
           </ul>
-          <a class="btn btn-secondary btn-lg" href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer" style="width: 100%; margin-top: auto; opacity: 0.85;">
-            <span>Get Notified on Release ↗</span>
-          </a>
+          <div style="display: flex; gap: 8px; width: 100%; margin-top: auto;">
+            <a class="btn btn-primary btn-lg" id="download-linux-appimage" href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.2.0/PromptTest.Studio_0.2.0_amd64.AppImage" style="flex: 1; padding: 10px 8px; font-size: 13px; text-align: center;">
+              <span>.AppImage ↓</span>
+            </a>
+            <a class="btn btn-secondary btn-lg" id="download-linux-deb" href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.2.0/PromptTest.Studio_0.2.0_amd64.deb" style="flex: 1; padding: 10px 8px; font-size: 13px; text-align: center;">
+              <span>.deb ↓</span>
+            </a>
+          </div>
           <p style="font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 10px; margin-bottom: 0;">
-            Follow GitHub Releases for Linux builds
+            Supports all major Linux distributions
           </p>
         </div>
       </div>
@@ -185,7 +191,19 @@
               <td><strong>Windows PC</strong></td>
               <td>Windows 10 (1809+) or Windows 11 (64-bit)</td>
               <td>Standalone Installer (.exe)</td>
-              <td><span class="meta-tag highlight">Supported (v0.1.0)</span></td>
+              <td><span class="meta-tag highlight">Supported (v0.2.0)</span></td>
+            </tr>
+            <tr>
+              <td><strong>macOS</strong></td>
+              <td>macOS 12+ (Apple Silicon)</td>
+              <td>Disk Image (.dmg)</td>
+              <td><span class="meta-tag highlight">Supported (v0.2.0)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Linux Workstation</strong></td>
+              <td>Ubuntu 20.04+, Debian 11+, Fedora 36+, Arch</td>
+              <td>AppImage &amp; .deb</td>
+              <td><span class="meta-tag highlight">Supported (v0.2.0)</span></td>
             </tr>
             <tr>
               <td><strong>Physical Android Devices</strong></td>
@@ -205,12 +223,6 @@
               <td>ADB over localhost port</td>
               <td><span class="meta-tag highlight">Supported</span></td>
             </tr>
-            <tr>
-              <td><strong>macOS &amp; Linux</strong></td>
-              <td>macOS 12+ / Ubuntu 20.04+, Fedora 36+</td>
-              <td>DMG &amp; AppImage / .deb</td>
-              <td><span class="meta-tag">Planned for v0.2.0</span></td>
-            </tr>
           </tbody>
         </table>
       </section>
@@ -222,17 +234,28 @@
           We provide cryptographic SHA-256 integrity checksums for every published build so you can verify that the downloaded installer has not been altered or corrupted.
         </p>
         
-        <p style="margin-bottom: 6px;"><strong>Official v0.1.0 Installer Checksum:</strong></p>
-        <pre class="code-box"><code>9a0ba1e61769aef10e53f2b1c61654897c1a8470c589eae2c7ebd76be35b2c17</code></pre>
+        <p style="margin-bottom: 6px;"><strong>Official v0.2.0 Installer Checksums:</strong></p>
+        <pre class="code-box"><code># Windows (.exe)
+61f968c179af17f0ae0aff1e9a2ef67018d5ad80c1aac134c18df59344d1a351  PromptTest.Studio_0.2.0_x64-setup.exe
+
+# macOS (.dmg)
+05e94a53e00d979c350dbf97cbf932d96cc913d1daf891c5c580a24bcecdc869  PromptTest.Studio_0.2.0_aarch64.dmg
+
+# Linux (.AppImage)
+93ff640ef5f9c6dd44eba96ed128e20676b9a8bd619c78d7e12407ee7a018e38  PromptTest.Studio_0.2.0_amd64.AppImage
+
+# Linux (.deb)
+af4e6166f12f0c33634eac3692e4c3da086303ac87eff378429eac34371a3c12  PromptTest.Studio_0.2.0_amd64.deb</code></pre>
 
         <p style="margin-top: 14px; margin-bottom: 6px;"><strong>Verify in Windows PowerShell:</strong></p>
-        <pre class="code-box"><code>Get-FileHash -Algorithm SHA256 "PromptTest Studio_0.1.0_x64-setup.exe"</code></pre>
+        <pre class="code-box"><code>Get-FileHash -Algorithm SHA256 "PromptTest.Studio_0.2.0_x64-setup.exe"</code></pre>
 
-        <p style="margin-top: 14px; margin-bottom: 6px;"><strong>Verify in Command Prompt (cmd.exe):</strong></p>
-        <pre class="code-box"><code>certutil -hashfile "PromptTest Studio_0.1.0_x64-setup.exe" SHA256</code></pre>
+        <p style="margin-top: 14px; margin-bottom: 6px;"><strong>Verify on macOS &amp; Linux:</strong></p>
+        <pre class="code-box"><code>shasum -a 256 "PromptTest.Studio_0.2.0_aarch64.dmg"   # macOS
+sha256sum "PromptTest.Studio_0.2.0_amd64.AppImage"    # Linux</code></pre>
 
         <p style="margin-top: 14px; margin-bottom: 0;">
-          Download the raw <a href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.1.0/SHA256SUMS.txt" target="_blank" rel="noreferrer">SHA256SUMS.txt ↗</a> or inspect the <a href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.1.0/release-manifest.json" target="_blank" rel="noreferrer">release-manifest.json ↗</a> for automated build provenance.
+          Download the raw <a href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.2.0/SHA256SUMS.txt" target="_blank" rel="noreferrer">SHA256SUMS.txt ↗</a> or inspect the <a href="https://github.com/shriramsingh/prompttest-studio-site/releases/download/v0.2.0/release-manifest.json" target="_blank" rel="noreferrer">release-manifest.json ↗</a> for automated build provenance.
         </p>
       </div>
 
