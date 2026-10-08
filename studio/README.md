@@ -45,10 +45,15 @@ moved offline after generation. Full key-handling and rotation rules: `docs/PUBL
 
 ---
 
-## 📥 Download & Changelog
+## 📥 Downloads & Multi-Platform Installers
 
-- **Latest installer (Windows `.exe`):** [prompttest-studio-site → releases/latest](https://github.com/shriramsingh/prompttest-studio-site/releases/latest)
-- **What changed in each version:** [release changelog](https://shriramsingh.github.io/prompttest-studio-site/changelog.html)
+PromptTest Studio is distributed as native desktop applications for Windows, macOS, and Linux:
+
+- 🪟 **Windows (x64):** [Download `.exe` Installer](https://github.com/shriramsingh/prompttest-studio-site/releases/latest) (NSIS per-user install, bundled ADB)
+- 🍎 **macOS (Apple Silicon & Intel):** [Download `.dmg`](https://github.com/shriramsingh/prompttest-studio-site/releases/latest) (Universal DMG package for macOS 12+)
+- 🐧 **Linux (x64):** [Download `.AppImage`](https://github.com/shriramsingh/prompttest-studio-site/releases/latest) · [Download `.deb`](https://github.com/shriramsingh/prompttest-studio-site/releases/latest) (Ubuntu, Debian, and standalone distros)
+- 🌐 **Interactive Download Portal:** [prompttest-studio-site/downloads.html](https://shriramsingh.github.io/prompttest-studio-site/downloads.html)
+- 📋 **Release Changelog & Hashes:** [Changelog Page](https://shriramsingh.github.io/prompttest-studio-site/changelog.html)
 
 ---
 
