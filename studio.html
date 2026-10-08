@@ -23,7 +23,35 @@
     </style>
   </head>
   <body>
-    <header class="nav shell"><a class="brand" href="index.html"><span class="brand-mark">P</span><span>PromptTest <strong>Studio</strong></span></a><nav><a href="features.html">Features</a><a href="getting-started.html">Get started</a><a href="downloads.html">Downloads</a><a href="changelog.html">Changelog</a><a href="studio.html">Docs</a><a href="contact.html">Contact</a></nav></header>
+    <!-- Top Navigation Header -->
+    <header class="header-wrap">
+      <div class="shell nav">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">P</span>
+          <span>PromptTest <strong>Studio</strong></span>
+        </a>
+        <nav class="nav-links">
+          <a href="features.html">Features</a>
+          <a href="getting-started.html">Get Started</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="studio.html" class="active">Docs</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Community</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-primary btn-download-primary" href="downloads.html">
+            <span>Download Studio</span>
+            <span>↓</span>
+          </a>
+          <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
     <main class="md-shell">
       <article class="markdown-body">
 <h1>PromptTest Studio 📱✨</h1>
@@ -82,6 +110,52 @@ moved offline after generation. Full key-handling and rotation rules: <code>docs
 <p>Proprietary &amp; Confidential — All rights reserved. Copyright (c) 2026 Shriram Singh.</p>
       </article>
     </main>
-    <footer class="shell"><span>© 2026 PromptTest Studio</span><a href="index.html">Home</a><a href="downloads.html">Downloads</a><a href="contact.html">Contact</a></footer>
+    <!-- Footer -->
+    <footer>
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <span class="brand-mark">P</span>
+              <span>PromptTest <strong>Studio</strong></span>
+            </a>
+            <p>The visual desktop IDE for autonomous mobile QA testing on Android devices with plain English.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="vs-appium.html">Why PromptTest (Comparison)</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="changelog.html">Release Changelog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="getting-started.html">Getting Started</a></li>
+              <li><a href="studio.html">Documentation</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Community &amp; Code</h4>
+            <ul>
+              <li><a href="https://github.com/shriramsingh/prompttest-community" target="_blank" rel="noreferrer">GitHub Community ↗</a></li>
+              <li><a href="https://www.npmjs.com/package/prompttest" target="_blank" rel="noreferrer">npm Package (CLI) ↗</a></li>
+              <li><a href="https://github.com/shriramsingh/prompttest-community/discussions" target="_blank" rel="noreferrer">Discussions ↗</a></li>
+              <li><a href="contact.html">Support &amp; Feedback</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 PromptTest Studio. All rights reserved.</span>
+          <span>Distributed via GitHub Releases</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts with Cache-Busting -->
+    <script src="scripts/nav.js?v=2.3"></script>
   </body>
 </html>
