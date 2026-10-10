@@ -98,9 +98,15 @@
         }
       }
 
-      // Update any version badges
-      document.querySelectorAll('.release-tag-text').forEach((el) => {
-        el.textContent = release.tag_name || 'Latest';
+      // Update all version tags and platform available badges dynamically
+      const tagText = release.tag_name || 'Latest';
+      document.querySelectorAll('.release-tag-text, .meta-tag.highlight').forEach((el) => {
+        if (el.textContent.includes('Current') || el.classList.contains('release-tag-text')) {
+          el.textContent = `Current Release: ${tagText}`;
+        }
+      });
+      document.querySelectorAll('.platform-status-badge.available').forEach((el) => {
+        el.textContent = `● ${tagText} Available`;
       });
     })
     .catch(() => {

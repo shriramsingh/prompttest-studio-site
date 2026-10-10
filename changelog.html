@@ -224,7 +224,7 @@
       <div class="page-header" style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
         <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;">
           <span class="eyebrow" style="margin: 0;">Release History</span>
-          <span class="meta-tag highlight">Current: v0.2.1</span>
+          <span class="meta-tag highlight">Current: v0.2.4</span>
         </div>
         <h1>Product <span class="gradient-text">Changelog</span></h1>
         <p class="lede">
@@ -234,11 +234,80 @@
 
       <div class="changelog-feed">
 
+        <!-- v0.2.4 Release Entry -->
+        <article class="release-entry featured" id="v0.2.4">
+          <div class="release-badge-row">
+            <span class="version-tag">v0.2.4</span>
+            <span class="status-pill latest">Latest Release</span>
+            <span class="meta-tag">Desktop IDE</span>
+            <span class="meta-tag">Multi-Platform</span>
+            <span class="release-date">October 10, 2026</span>
+          </div>
+
+          <h2 class="release-title">Resilient Flow Control, Screen Alignment &amp; Zero-Latency DSL Editor</h2>
+          <p class="release-summary">
+            PromptTest Studio v0.2.4 introduces Pre-Flight Screen Alignment for seamless testing against live authenticated sessions, native code editor autocomplete with syntax highlighting for flow control blocks, and deep integration with the v1.5.8 engine.
+          </p>
+
+          <div class="section-category feat">✨ Features &amp; Capabilities</div>
+          <ul class="change-list">
+            <li><strong>Pre-Flight Screen Alignment:</strong> Studio dynamically analyzes elements streamed from your phone mirror against active spec steps. When the device is already past login (e.g. on Dashboard), an interactive banner offers 1-click execution starting from the current screen (<code>Run from Step X</code>) or fresh Cold Boot.</li>
+            <li><strong>Native Spec Editor Autocomplete:</strong> Real-time syntax highlighting, line numbers, and intelligent auto-suggestions for UI elements, structured <code>If...Else...End</code> blocks, <code>Loop N times</code>, <code>Optional</code> qualifiers, and <code>(continue on fail)</code>.</li>
+            <li><strong>Spec-Level Policy Directives:</strong> Full support for <code># Policy: continue</code> headers and inline continue clauses, allowing test suites to bypass non-critical failures headlessly.</li>
+          </ul>
+
+          <div class="section-category fix">🛠️ Fixes &amp; Stability</div>
+          <ul class="change-list">
+            <li><strong>Inspector Element Retention:</strong> Fixed inspector details panel retention when clicking active elements, preventing inadvertent resets during fast UI polling intervals.</li>
+            <li><strong>Engine Fast-Forward Lookahead:</strong> Resolved engine fast-forwarding logic in <code>TypeHandler</code> and <code>VerifyHandler</code> to properly handle screens with active search inputs.</li>
+          </ul>
+
+          <details class="artifacts-drawer">
+            <summary>
+              <span>📦 Published Artifacts &amp; Cryptographic SHA-256 Hashes (v0.2.4)</span>
+              <span>▼</span>
+            </summary>
+            <div class="artifacts-table-wrap">
+              <table class="artifacts-table">
+                <thead>
+                  <tr>
+                    <th>Platform</th>
+                    <th>Target Artifact</th>
+                    <th>SHA-256 Verification Hash</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Windows (64-bit)</td>
+                    <td><code>PromptTest.Studio_0.2.4_x64-setup.exe</code></td>
+                    <td><code>9e31b1bdde0dbf6cc7c0233022256dc533dd283e90f5a0eb2f3756c288047096</code></td>
+                  </tr>
+                  <tr>
+                    <td>macOS (ARM64)</td>
+                    <td><code>PromptTest.Studio_0.2.4_aarch64.dmg</code></td>
+                    <td><code>93bc77163a6e49ac39ea2aa380b146522bc3fe9af79a4a4fc51f7458c4435043</code></td>
+                  </tr>
+                  <tr>
+                    <td>Linux (AppImage)</td>
+                    <td><code>PromptTest.Studio_0.2.4_amd64.AppImage</code></td>
+                    <td><code>3e1c2da1d5923704583fb8e6de9b96bea6210ede96516c4e005c0a17c5cd1308</code></td>
+                  </tr>
+                  <tr>
+                    <td>Linux (Debian)</td>
+                    <td><code>PromptTest.Studio_0.2.4_amd64.deb</code></td>
+                    <td><code>37fa8a2b81c3e15e5b31e60b649cb8af811c465b46913c786566734143bc6029</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </article>
+
         <!-- v0.2.1 Release Entry -->
-        <article class="release-entry featured" id="v0.2.1">
+        <article class="release-entry" id="v0.2.1">
           <div class="release-badge-row">
             <span class="version-tag">v0.2.1</span>
-            <span class="status-pill latest">Latest Release</span>
+            <span class="status-pill stable">Stable</span>
             <span class="meta-tag">Desktop IDE</span>
             <span class="meta-tag">Multi-Platform</span>
             <span class="release-date">October 8, 2026</span>
