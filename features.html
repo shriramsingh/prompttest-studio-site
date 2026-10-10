@@ -118,18 +118,29 @@
         </div>
 
         <div class="doc-shell" style="max-width: 800px;">
-          <h3 style="margin-top: 0;">Example E-Commerce Flow</h3>
+          <h3 style="margin-top: 0;">Resilient Flow Control &amp; Real-World Grammar</h3>
           <pre class="code-box"><code>Launch "com.example.retailapp"
+
+# Resilient Authentication: skips automatically if already on Dashboard
+If "Sign In" is visible
+  Type "tester@example.com" into "Email"
+  Type "Secret@123" into "Password"
+  Tap "Sign In"
+End
+
+# Bypass intermittent promo modals cleanly without flakiness
+Optional Tap "Allow Notifications"
+Optional Tap "Dismiss Promo"
+
+# Search and purchase journey
 Tap "Search Products"
 Type "Wireless Headphones" into "Search Bar"
 Tap "Search"
 Assert "Sony WH-1000XM5" is visible
 Tap "Add to Cart"
-Assert "Cart Badge (1)" is visible
-Tap "Proceed to Checkout"
-Assert "Payment Options" is visible</code></pre>
+Assert "Payment Options" is visible (continue on fail)</code></pre>
           <p style="color: var(--text-muted); font-size: 13px; margin-top: 14px; margin-bottom: 0;">
-            Studio automatically resolves element labels, resource IDs, and accessibility strings at runtime, maintaining test resilience even when UI attributes shift across app builds.
+            PromptTest supports full programmatic flow control: structured <code>If...Else...End</code> blocks, <code>Loop N times</code>, per-step <code>Optional</code> qualifiers, and modular <code># Policy: continue</code> headers.
           </p>
         </div>
       </section>

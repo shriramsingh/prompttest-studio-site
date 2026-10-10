@@ -113,12 +113,17 @@
         <pre class="code-box"><code># Launch the application
 Launch "com.example.myapp"
 
-# Navigate through onboarding
-Tap "Get Started"
-Type "tester@example.com" into "Email address"
-Tap "Continue"
+# Auth Guard: executes only if logged out; skips if already on Dashboard
+If "Email address" is visible
+  Type "tester@example.com" into "Email address"
+  Type "Secret@123" into "Password"
+  Tap "Sign In"
+End
 
-# Assert outcome
+# Bypass promotional banners cleanly
+Optional Tap "Allow Notifications"
+
+# Assert outcome and continue
 Assert "Welcome to your Dashboard" is visible</code></pre>
 
         <p>Click <strong>Run Suite</strong>. Studio will execute each step on the physical device, stream real-time pass/fail states, and save verification screenshots.</p>
